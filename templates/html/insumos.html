@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insumos</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+     <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+    <main class="barra-de-navegacao">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+        <div class="d-flex">
+            <div class="fundobarra">
+                <h4> Funcionalidades </h4>
+                <nav class="navegar d-flex">
+                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+            </div>
+
+            <div class="campo-demonstrar d-flex">
+                <div class="centralização buscar">
+                    <h2>Buscar Insumos</h2>
+                    <div class="campoDeBusca">
+                        <input type="text" >
+                        
+                        <div class="botoes2 ">
+                            
+                            <a href="{{url_for('cadastroInsumo')}}" class="BotaoMarrom">+</a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Insumos</h3>
+                <div class="tabela-insumos-cabecalho d-flex">
+                    <p><strong>Nome</strong></p>
+                    <p><strong>Unidade de Medida</strong></p>
+                    <p><strong>Preço</strong></p>
+                    <p><strong>Estoque</strong></p>
+                    <p><strong>Ações</strong></p>
+                </div>
+                {% for insumo in insumos %}
+                <div class="insumos d-flex">
+                    <div class="info d-flex">
+                        <p>{{ insumo[1] }}</p>
+                        <p>{{ insumo[2] }}</p>
+                        <p>R$ {{ "%.2f"|format(insumo[3]) }}</p>
+                        <p>{{ insumo[4] }}</p>
+                    </div>
+                    <div class="botoes-IP d-flex">
+                        <a class="editar" href="{{ url_for('editarInsumo', id=insumo[0]) }}">
+                            <img src="../../static/img/lapis-edicao.png" alt="Editar" class="icone-editar">
+                        </a>
+                        
+                        <form action="{{ url_for('excluirInsumo', id=insumo[0]) }}" method="POST">
+                            <button type="submit" class="exclusao">
+                                <img src="../../static/img/lixo.png" alt="Excluir" class="icone-excluir">
+                            </button>
+                        </form>
+
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+   <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</body>
+
+</html>

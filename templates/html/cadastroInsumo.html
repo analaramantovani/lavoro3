@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Insumo</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
+                        alt="Ícone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                        alt="Ícone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                        alt="Ícone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                        alt="Ícone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="d-flex">
+         {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+        <div class="d-flex">
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
+                        alt="Ícone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                        alt="Ícone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                        alt="Ícone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                        alt="Ícone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+
+        <section class="cadastro-geral d-flex">
+            <h2 class="titulo-cadastro-insumo">Cadastro de Insumos</h2>
+            <div class="cardastro">
+                <form action="{{ url_for('cadastroInsumo') }}" method="POST">
+                    <label for="nomeinsumo">Nome do insumo (ex: Farinha de trigo, leite condensado)</label>
+                    <input type="text" id="nomeinsumo" name="nomeinsumo" required>
+
+                    <label for="unidademedida">Unidade de medida</label>
+                    <select id="unidademedida" name="unidademedida" required>
+                        <option value="kg">Kg</option>
+                        <option value="litro">Litro</option>
+                        <option value="unidade">Unidade</option>
+                    </select>
+
+                    <label for="custounitario">Custo unitário</label>
+                    <input type="number" id="custounitario" name="custounitario"  step="0.01"  min="1" required>
+
+                    <label for="estoque">Estoque</label>
+                    <input type="number" id="estoque" name="estoque"   min="0" required>
+
+                    <div class="botoes">
+                        <!-- O botão "Cancelar" agora é um link que redireciona para a página de insumos -->
+                        <a href="{{ url_for('insumos') }}" class="BotaoVermelho">Cancelar</a>
+
+                        <!-- O botão "Cadastrar" é apenas de submit agora -->
+                        <a href="{{url_for('insumos')}}"><button type="submit" class="BotaoVerde">Cadastrar</button></a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div>
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div>
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

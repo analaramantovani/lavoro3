@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Lavoro</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro" class="logo">
+        <button id="tresRiscos" class="botaohome" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <button id="Fechar" class="fechar">Fechar</button>
+                <a href="" class=" linksn d-flex"><img class="casa" src="../../static/img/Icone_casa.png"
+                        alt="Icone de Casa">Home</a>
+                <a href="login" class="" d-flex><img src="../../static/img/Pessoa.png" alt="Pessoa">Login</a>
+                <a href="cadastro" class="linksn d-flex"><img src="../../static/img/Icone_Prancheta.png" alt="Icone da Caderneta">Cadastre-se</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+         {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+        <section class="paginainicial">
+            <div class="textoinicial">
+                <h1>Organize seus produtos e defina preços de forma simples e inteligente</h1>
+                <p>Ferramenta de gestão criada especialmente para pequenos produtores</p>
+            </div>
+            <a class="botaocadastro" href="{{url_for('cadastro')}}">Ver como funciona</a>
+        </section>
+        <section class="beneficios">
+            <h3>Benefícios principais</h3>
+            <div class="beneficios-pai">
+                <div class="beneficio">
+                    <img src="../../static/img/Icone_beneficios1.png" class="img-caixa" alt="Gestão de produtos">
+                    <div class="gestao-produtos">
+                        <h4>Gestão de produtos</h4>
+                        <p>Cadastre e organize seu estoque de forma fácil.</p>
+                    </div>
+
+                </div>
+                <div class="beneficio dinheiro">
+                    <img src="../../static/img/Icone_beneficios2.png" class="img-dinheiro" alt="Precificação inteligente">
+                    <div class="preci-inteligente">
+                        <h4>Precificação inteligente</h4>
+                        <p>Calcule preços justos levando em conta custos e margem de lucro.</p>
+                    </div>
+                </div>
+                <div class="beneficio">
+                    <img src="../../static/img/Icone_beneficios3.png" class="img-grafico" alt="Relatórios claros">
+                    <div class="relatorio-claro">
+                        <h4>Relatórios claros</h4>
+                        <p>Veja como estão suas vendas e aumente seus ganhos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="funcionalidades">
+            <div class="container-funcionalidades">
+                    <div class="card-funcionalidade ">
+                        <img src="../../static/img/funcionalidades1.png" alt="Acesso fácil pelo celular">
+                        <p>Acesso fácil pelo celular</p>
+                    </div>
+                    <div class="card-funcionalidade">
+                        <img src="../../static/img/funcionalidades2.png" alt="Cadastro de produtos">
+                        <p>Cadastro de produtos</p>
+                    </div>
+                    <div class="card-funcionalidade">
+                        <img src="../../static/img/funcionalidades3.png" alt="Relatórios de vendas e lucros">
+                        <p>Relatórios de vendas e lucros</p>
+                    </div>
+                    <div class="card-funcionalidade">
+                        <img src="../../static/img/funcinalidades4.png" alt="Definição de preços">
+                        <p>Definição de preços</p>
+                    </div>
+            </div>
+        </section>
+        <section class="depoimentos">
+
+            <h3>Depoimentos</h3>
+            <div class="depoimentos-container">
+                <div class="card-depoimento">
+                    <p class="nome"><strong>João Martins</strong></p>
+                    <div class="estrelas">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                    </div>
+                    <p>O time da Lavoro é extremamente profissional e qualificado. Eles realmente se importam com o sucesso do cliente.
+                    </p>
+                </div>
+                <div class="card-depoimento">
+                    <p class="nome"><strong>Camila
+                            Oliveira</strong></p>
+                    <div class="estrelas">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                        <img src="../../static/img/estrelavaaliacao.png" alt="Estrela">
+                    </div>
+                    <p>Excelente serviço! A Lavoro realmente se preocupa em entender nossas necessidades e se adapta muito bem.</p>
+                </div>
+            </div>
+        </section>
+        <section class="formulario">
+            <h3>Queremos te ouvir!</h3>
+
+            <form action="">
+                <label for="">Nome</label>
+                <input class="avaliacao" type="text" >
+                <label for="">Escreva um comentário</label>
+                <textarea class="avaliacao"></textarea>
+                <label for="">Avalie nosso serviço</label>
+                <div class="estrelas-responcivo">
+                    <div class="stars" id="stars">
+                        <span data-value="1">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="5">★</span>
+                    </div>
+                    <button class="BotaoVerde" type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" class="logo-footer" alt="Logo da Lavoro">
+            <p  >© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

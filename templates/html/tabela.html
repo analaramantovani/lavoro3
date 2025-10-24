@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Tabela</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+    <main class="d-flex">
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="card d-flex">
+                <h2>Tabela</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Custo total</th>
+                            <th>Preço</th>
+                            <th>Margem aplicada</th>
+                            <th>Lucro unidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bolo de cenoura</td>
+                            <td>R$3,50</td>
+                            <td>R$8,75</td>
+                            <td>150%</td>
+                            <td><strong>R$5,25</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Brigadeiro Gourmet</td>
+                            <td>R$1,20</td>
+                            <td>R$3,00</td>
+                            <td>150%</td>
+                            <td><strong>R$1,80</strong></td>
+
+                        </tr>
+                        <tr>
+                            <td>Mini pizza calabresa</td>
+                            <td>R$4,20</td>
+                            <td>R$10,00</td>
+                            <td>150%</td>
+                            <td><strong>R$6,00</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Empada de Frango</td>
+                            <td>R$4,50</td>
+                            <td>R$10,00</td>
+                            <td>150%</td>
+                            <td><strong>R$3,75</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Pudim Individual</td>
+                            <td>R$5,50</td>
+                            <td>R$6,25</td>
+                            <td>150%</td>
+                            <td><strong>R$7,50</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="BotaoVerde ok" href="{{url_for('lucro')}}">Ok</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div>
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div>
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição Perfil</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="insumos" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                        alt="Icone de Insumos">Insumos</a>
+                <a href="produto" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                        alt="Icone da caixa de produtos">Produtos</a>
+                <a href="lucro" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                        alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+    <main class="editPTamanho d-flex">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        <section class="foto">
+            <img class="foto-pessoa2" src="../../static/img/icone-pessoa.png" alt="icone com a foto de uma pessoa">
+        </section>
+
+        <section>
+            <div class="titulo-edicao-perfil">
+                <h1>Editar Perfil</h1>
+            </div>
+            <form class="form-edicao-perfil" method="POST" action="{{ url_for('editarperfil', id=usuario[0]) }}">
+
+                <div>
+                    <label class="nome-edicao-perfil">Nome</label>
+                    <input class="edicaoP" type="text" name="nome-edicao-perfil" value="{{ usuario[1] }}" required>
+                </div>
+
+                <div>
+                    <label class="email-edicao-perfil">Email</label>
+                    <input class="edicaoP" type="text" name="email-edicao-perfil" value="{{ usuario[2] }}" required>
+                </div>
+
+                <div>
+                    <label class="tel-edicao-perfil">Telefone</label>
+                    <input class="edicaoP" id="telefone" type="tel" name="tel-edicao-perfil" value="{{ usuario[3] }}" required>
+                </div>
+
+                <div>
+                    <label class="senha">Senha</label>
+                    <input class="edicaoP" type="password" name="senha"  >
+                </div>
+
+
+                <div class="botaoEditP d-flex">
+                    <button class="BotaoVerde" type="submit">Salvar</button>
+                    <a class="linkUnico BotaoVermelho" href="{{ url_for('perfil') }}">Cancelar</a>
+                </div>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer>
+        window.onload = () => {
+            var tel = document.getElementById("telefone")
+            var formata = formatarTelefone(tel.value)
+            tel.value = formata
+        }
+    </script>
+</body>
+
+</html>

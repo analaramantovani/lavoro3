@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro" class="logo">
+        <button id="tresRiscos" class="botaohome" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <button id="Fechar" class="fechar">Fechar</button>
+                <a href="/" class=" linksn d-flex"><img  class="casa" src="../../static/img/Icone_casa.png" alt="Icone de Casa">Home</a>
+                <a href="login" class="" d-flex"><img src="../../static/img/Pessoa.png" alt="Pessoa">Login</a>
+                <a href="cadastrar" class="linksn d-flex"><img src="../../static/img/Icone_Prancheta.png" alt="Icone da Caderneta">Cadastre-se</a>
+            </nav>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="fundo-login">
+
+            <div>
+                <h1 class="titulo-login">Bem vindo(a)!</h1>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+            <div>
+                <form class="form-login" action="{{ url_for('logar') }}" method="POST">
+                    <div>
+                        <label class="email-login">Email</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label class="senha-login">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+
+                    <div class="d-flex conjunto-login">
+                        <a class="botaocadastrologin" href="{{url_for('cadastro')}}" role="button">Cadastre-se</a>
+                        <button class="botaoentrarlogin" type="submit">Entrar</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

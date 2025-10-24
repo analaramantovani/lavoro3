@@ -1,0 +1,936 @@
+ :root {
+    --BegeEscuro--: #A68C69;
+    /*Cor principal*/
+    --BegeClaro--: #F0E5C9;
+    /*Cor principal*/
+    --VerdeEscuro--: #878F55;
+    /*Cor Secundaria*/
+    --Preto--: #000000;
+    /*Cor Secundaria*/
+    --VermelhoPastel--: #D74747;
+    /*Cor Botão*/
+    --Branco--: #FFFFFF;
+    /*Cor Fundo*/
+    --CinzaClaro--: #F5F5F5;
+    /*Cor Detalhes*/
+    --CinzaEscuro--: #E9E9E9;
+    /*Cor Detalhes*/
+    --titulohome--: #785337;
+    /*Cor Título Home*/
+    --subtitulohome--: #876434;
+    /*Cor Subtítulo Home*/
+    --verderodape--: #606831;
+    /*Cor NavegarSanduiche*/
+    --BegeNavegar--: #a68c697e;
+    /*Cor Rodapé*/
+    --depoimentos--: #8B9550;
+    --fundobeneficios--: #ADB86C;
+    --textobeneficiosh4--: #343724;
+    --titulobeneficios--: #A68C69;
+    --fundoformulario--: #BBC09D;
+    --funcionalidades--: #D7DFAA;
+    --funcoeslucro--: #9BA657;
+    --tabela--: #ADB86C;
+    --fundo--tabela: #B9A07D;
+    /*Numeração*/
+    --BordaMuitoRedonda--: 2em;
+    --BordaPoucoRedonda--: 0.6em;
+    --TamanhoBotaoSair--: 0.9em 1.6em;
+    --TamanhoBotao--: 0.5rem 2rem;
+    --TamanhoBotaoAd--: 0.4rem 1rem;
+}
+
+
+/* 768 tablet */
+@media (max-width: 768px) {
+    .cadastro-geral{
+        margin-left: 6em;
+    }
+    header {
+        width: auto; 
+    }
+    
+    .botaohomeLogado{
+        display: flex;
+    }
+    .fundobarra{
+        display: none; 
+    }
+    
+    /*Home*/
+    .textoinicial h1{
+        font-size: 2rem;
+        margin-bottom: 2em;
+        margin-left: 2.8em;
+        text-align: justify;
+    }
+    .textoinicial p{
+        font-size: 1.4rem;
+        text-align: -webkit-left;
+        color: 876434;
+        margin-left: 3.8em;
+        margin-top: -2em;
+    }
+    .botaocadastro{
+        margin-left: -11rem;
+        margin-top: 7rem;
+    }
+    .beneficios h3{
+        font-size: 2.2em;
+    }
+    .beneficios-pai{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .beneficio{
+        align-items: center;
+        display: flex;
+        max-width: 468px;
+    }
+    .beneficio img{
+        height: 10em;
+    }
+    .gestao-produtos{
+        margin-left: 2em;
+    }
+    .preci-inteligente{
+        margin-right: 2em;
+    }
+    .relatorio-claro{
+        margin-left: 2em;
+    }
+    .dinheiro{
+        flex-direction: row-reverse;
+    }
+    .container-funcionalidades{
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    .formulario .BotaoVerde{
+        margin-left: 1em;
+    }
+    
+    /* Cadastro */
+    .fundo-cadastro{
+        height: 42em;
+    }
+    
+    .titulo-cadastro {
+        margin-top: -1.1em;
+    }
+
+    .form-cadastro{
+        margin-left:-1em;
+        width: 70%;
+        margin: 20px;
+    }
+    
+    /* Login */
+    .titulo-login{
+       margin-left: 9em;
+    }
+    .form-login{
+        margin-left: 10em;
+    }
+    .BotaoMarrom{
+        margin-left: 0em;
+    }
+    .conjunto-login{
+        gap: 8em;
+        margin-left: 0em;
+        margin-top: 1em;
+    }
+
+
+    /*Lucro*/
+    .lucro h1{
+        margin-left: -2em;
+    }
+    .funcoes-card{
+        height: 7em;
+        width: 7em;
+    }
+    .funcoes{
+        margin-left: -7em;
+    }
+    p{
+        margin-top: 2em;
+    }
+    .funcoeslucro{
+        margin-left: -7em;
+    }
+
+    /* Perfil */
+    .foto-pessoa{
+        margin-left: 4em;
+    }
+    
+    .infPessoa{
+        margin-left: 0;
+    }
+    .PessoaB{
+        margin-left: 4em;
+    }
+
+    /* Edição Perfil */
+    .foto-pessoa2{
+        margin-top: 0em;
+        width: 11em;
+        height: 10em;
+    }
+
+    .editPTamanho{
+        flex-direction: column;
+    }
+
+    .edicaoP{
+        width: 46%;
+    }
+  
+    /* Insumos */
+   
+    .insumos p{
+        margin-left: 0.6em;
+        margin-top: 0em;
+    }
+    .insumos{
+        padding: 1.5em;
+    }
+    .insumos .BotaoVermelho{
+        border-radius: 0.6em;
+    }
+
+    /* Cadastro Insumo  */
+
+    .BotaoVermelho{
+        border-radius: var(--BordaPoucoRedonda--);
+        font-size: 1em;
+    }
+
+    /* Editar Insumo */
+    .edicao{
+        margin-left: 7em;
+        height: 28em;
+
+    }
+
+
+    /* Produtos */
+    
+    p{
+        margin-top: 0em;
+    }
+    .produto .BotaoVermelho{
+        margin-left:-1em;
+        margin-top: 0.3em;
+    }
+    .produto{
+        padding: 1em;
+    }
+
+    /* Editar Produto */
+    .insumosP{
+        margin-left: 1em;
+        gap: 4rem;
+        padding: 1rem;
+    
+    }
+    .botoes-edicao{
+        margin-top: 2em;
+        gap: 20em;
+    }
+    
+
+    
+}
+
+/* 425px mobile */
+
+@media (max-width: 426px) {
+
+    .botoes-edicao{
+        margin-left: 7em;
+        width: 8em;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .form-cadastro {
+        margin-left: 4vh;
+    }
+
+    .cardastro {
+        width: 20em;
+        margin-right: 1em;
+    }
+
+
+    .cadastro-geral{
+        margin-left: auto;
+    }
+
+    .ingredientes {
+    gap: 12em; 
+    }
+    /* cadastro */
+        .fundo-cadastro {
+            background-image: url(../img/Fundo_Login_Responcivo.png);
+            background-repeat: no-repeat;
+            /* Impede que a imagem de fundo se repita */
+            background-position: center;
+            /* Centraliza a imagem de fundo */
+            background-size: cover;
+            /* Faz a imagem de fundo cobrir toda a área do elemento */
+            text-align: center;
+            /* Centraliza o conteúdo do texto horizontalmente */
+            padding-top: 100px;
+            /* Adiciona espaço acima do conteúdo (afasta do topo) */
+            height: 42em;
+            /* Define a ALTURA da seção como 600px */
+            width: 100%;
+            /* Define a LARGURA como 100% do elemento pai */
+        }
+                .form-cadastro {
+                    margin-left: 1em;
+                    height: 25em;
+                    margin-top: 10em;
+                    width: 18em;
+                }
+        
+                form input {
+                    width: 95%;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .form-cadastro label {
+                        display: none;
+                }
+
+                .titulo-cadastro {
+                    font-size: 1.8em;
+                    font-family: 'Lato';
+                    color: #606831;
+                }
+    /* login */
+        .fundo-login {
+            background-image: url(../img/Fundo_Login_Responcivo.png);
+            background-repeat: no-repeat;
+            /* Impede que a imagem de fundo se repita */
+            background-position: center;
+            /* Centraliza a imagem de fundo */
+            background-size: cover;
+            /* Faz a imagem de fundo cobrir toda a área do elemento */
+            text-align: center;
+            /* Centraliza o conteúdo do texto horizontalmente */
+            padding-top: 100px;
+            /* Adiciona espaço acima do conteúdo (afasta do topo) */
+            height: 600px;
+            /* Define a ALTURA da seção como 600px */
+            width: 100%;
+            /* Define a LARGURA como 100% do elemento pai */
+        }
+        .form-login {
+            margin-left: 2em;
+            width: 60%;
+            height: 250px;
+        }
+    
+    
+        .titulo-login {
+            font-size: 1.8em;
+            font-family: 'Lato';
+            color: #606831;
+            margin-left: -2em;
+            margin-top: 6em;
+        }
+        .conjunto-login .BotaoMarrom{
+            margin-left: 0;
+        }
+    footer{
+        gap: 4em;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .logo-footer{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .contato{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .meios-contatos{
+        align-items: center;
+        gap: 0.3em;
+    }
+        /* Edição Perfil */
+    .foto-pessoa2{
+        margin-left: 2em;
+    }
+    .editPTamanho {
+        width: auto;
+    }
+    .titulo-edicao-perfil {
+        margin-left: 2em;
+        color: #878F55;
+        margin-top: -3em;
+    }
+    .form-edicao-perfil{
+        margin-left: 2em;
+    }
+    .edicaoP{
+        width: 55%;
+    }
+
+    /* Perfil */
+    .info-pessoal{
+        flex-direction: column;
+
+    }
+    .infPessoa{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .botaoEditP {
+            gap: 2em;
+            flex-wrap: wrap;
+    }
+    /* Lucro */
+    .lucro h1{
+        margin-left: -2.5em;
+        font-size: 1.6em;
+        height: -2em;
+        width: 6.5em;
+    }
+    .funcoes{
+        flex-direction: column;
+        margin-left: -8em;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+        margin-left: -8em;
+    }
+
+
+
+    /* editar produto */
+    .edicao{
+        margin-left: 1.5em;
+        width: 20em;
+        height: 29em;
+    }
+    .insumosP{
+        display: none;
+        gap: 2rem;
+        width: 20em;
+        margin-left: 0;
+    }
+    /* graficos */
+    .graficos{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .graficos-card{
+        padding: 2em 2em;
+    }
+    /* tabela */
+    .card{
+        max-width: 350px;
+    }
+    .card h2 {
+        margin-bottom: 40px;
+    }
+    
+    /* Insumos  e produtos*/
+    .campoDeBusca  {
+        width: 20em;
+        flex-direction: column;
+    }
+    .campo-demonstrar{
+        width: 20em;
+    }
+    .campo-demonstrar h3 {
+        margin-top: 5em;
+    }
+    .botoes2{
+        flex-direction: row;
+        gap: 7em;
+    }
+    .campoDeBusca {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .info{
+        flex-direction: column;
+    }
+    .botoes-IP{
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 1em;
+    }
+
+    /*Home*/
+    .botaocadastro {
+        margin-left: -12rem;
+        margin-top: 1em;
+    }
+    .depoimentos-container {
+        flex-wrap: wrap;
+    }
+    /* cadastro de insumos e produtos */
+
+    .cardastro .botoes{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    
+    .ingredientes{
+        margin-bottom: 4em;
+    }
+
+    /* produto individual */
+    .campo-produto-indiv {
+        width: 20em;
+        height: 35em;
+    
+    }
+    .centralização{
+        gap: 2em;
+    }
+    
+    .campo-lucro{
+        gap: 5em;
+        display: block;
+    }
+    .campo-lucro p{
+        margin-bottom: 2em;
+    }
+    .voltarP{
+        gap: 1em;
+
+        
+
+    }
+    /* selecão de insumos */
+    .selecionar-insumos{
+        margin-left: 0;
+        width: 20em;
+    }
+       
+
+     .container-funcionalidades {
+            width: 83%;
+    }
+
+
+    .formulario .BotaoVerde {
+        margin-top: 2em;
+        margin-left: 6.6em;
+    }
+
+    .dinheiro {
+        margin-left: 2em;
+    } 
+
+
+    .form-login {
+        margin-left: 4em;
+        width: 60%;
+        height: 250px;
+    }
+
+    .titulo-login {
+        margin-left: 4.3em;
+    }
+ 
+    .conjunto-login {
+        gap: 2em;
+    }
+}
+
+
+@media (max-width: 320px){
+
+    /* Mensagens Flash */
+        .flash{
+        margin-left: -7em;
+        transform: scale(0.8); /* reduz o tamanho */
+        margin-top: 5em;
+
+    }
+    .flash.success{
+        background-color: #9cdb50ea;
+    }
+    .flash.error {
+        background-color: #e86161; 
+        margin-top: 6em;
+    }
+
+    .flash.warning {
+        background-color: rgba(232, 183, 59, 0.959);
+    }
+
+
+
+    /* Home */
+
+    .paginainicial {
+        height: 20em;
+        width: 30em;
+    }
+    .textoinicial{
+        padding-right: 10px;
+    }
+    .paginainicial{
+        height: 24em;
+        width: 20em;
+    }
+    .textoinicial h1{
+        font-size: 1.6em;
+        text-align: left;
+        margin-left: 93px;
+        width: 8em;
+        margin-top: -2em;
+    }
+    .textoinicial p{
+        text-align: inherit;
+        font-size: 0.9em;
+        margin-top: -3em;
+    }
+    .botaocadastro{
+        margin-top: -2em;
+        margin-left: -4em;
+        padding: 0.5em;
+    }
+
+    .beneficio{
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .img-grafico{
+        margin-left: 2.6em;
+    }
+    .img-caixa{
+        margin-left: 0.5em;
+    }
+    .gestao-produtos{
+        margin-left: 0em;
+    }
+    .img-dinheiro{
+        margin-left: -1em;
+    }
+    .preci-inteligente{
+        margin-left: 1em;
+    }
+    .card-depoimento:not(:first-child){
+        display: none;
+    }
+
+    .espaçar-funcionalidade{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .estrelas-responcivo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formulario .BotaoVerde{
+        margin-left: 0em;
+    }
+
+    /* Cadastro */
+    .fundo-cadastro{
+        background-image: url(../img/Fundo_Login_Responcivo.png);
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+        text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+        padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+        height: 42em; /* Define a ALTURA da seção como 600px */
+        width: 100%; /* Define a LARGURA como 100% do elemento pai */
+     }
+    .form-cadastro{
+        margin-left: 1.5em;
+        height: 26em;
+        margin-top: 8em;
+        width: 12em;
+    }
+    form input{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-cadastro{
+        font-size: 1.8em;
+        font-family: 'Lato';
+        color: #606831;
+    }
+
+    /* Login */
+    .fundo-login{
+        background-image: url(../img/Fundo_Login_Responcivo.png);
+        background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+        background-position: center; /* Centraliza a imagem de fundo */
+        background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+        text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+        padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+        height: 600px; /* Define a ALTURA da seção como 600px */
+        width: 100%; /* Define a LARGURA como 100% do elemento pai */
+     }
+    .form-login{
+        margin-left: 2.5em;
+        height: 23em;
+        height: 16em;
+        margin-top: -0.5em;
+    }
+    form input{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-login {
+        font-size: 1.8em;
+        font-family: 'Lato';
+        color: #606831;
+        margin-left: 0em;
+        margin-top: 6em; 
+    }
+    .conjunto-login .BotaoVerde{
+        margin-top: -1em;
+        transform: scale(0.9);
+        display: block;
+    }
+    .conjunto-login .BotaoMarrom{
+        margin-top: -1em;
+        transform: scale(0.9);
+        border-radius: var(--BordaPoucoRedonda--);
+    }
+    .conjunto-login{
+        display: ruby-text;
+        margin-left: -0.5em;
+    }
+    /* Lucro */
+    .lucro h1{
+        margin-left: -5em;
+        font-size: 1.6em;
+        height: -2em;
+        width: 6.5em;
+    }
+    .funcoes{
+        flex-direction: column;
+        margin-left: -11em;
+    }
+    .funcoeslucro{
+        flex-direction: column;
+        margin-left: -11em;
+    }
+
+    /* Perfil */
+    .foto-pessoa{
+        margin-left: 1.5em;
+    }
+    .infPessoa{
+        flex-direction: column;
+    }
+    .info-pessoal h1{
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+    .PessoaB{
+        margin-left: 1em;
+    }
+    .nome-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
+    .email-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
+    .telefone-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    }
+
+    /* Edição Perfil */
+    .form-edicao-perfil{
+        margin-left: -2em;
+        margin-top: 2em;
+    }
+    .botaoEditP{
+       gap: 1em;
+        margin-left: 0em;
+        display: flex;
+    }
+    .titulo-edicao-perfil h1{
+        margin-left: -2em;
+        margin-top: -3em;
+    }
+    .foto-pessoa2{
+        margin-left: -2em;
+        margin-top: -5em;
+    }
+
+    /* Não sei perdido */
+    .beneficio{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .beneficio img{
+        height: 10em;
+    }
+
+    .depoimentos-container{
+        flex-wrap: wrap;
+    }
+    .logo-footer{
+        margin-left: 0;
+    }
+    .card-depoimento:not(:first-child) {
+    display: none;
+  }
+
+    
+    /* pagina graficos */
+        .graficos-card img {
+            width: 12em;
+        }
+
+    /* Produtos Individuais */
+        .NomeP {
+            margin-left: -1em;
+            margin-top: 0.5em;
+        }
+        .TempoDoP {
+            margin-left: -1.2em;
+        }
+        .IdP {
+            margin-left: -1.2em;
+        }
+        .ad-insumos{
+            margin-left: -1em;
+            margin-top: 0em;
+        }
+        .campo-lucro{
+            margin-left: -1em;
+        }
+        .voltarP {
+            display: flex;
+            margin-left: -2em;
+        }
+
+        /* Produto */
+        .campoDeBusca input{
+            width: 17em;
+            padding: 0.5em;
+        }
+        .produto{
+            padding: 5em;
+            margin-top: 1em;
+            height: 7em;
+            width: 5em;
+            margin-left: -0.5em;
+        }
+        .info{
+            margin-left: -3em;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        .botoes-IP{
+            margin-left: 1.5em;
+        }
+        .botoes-IP .BotaoMarrom{
+            padding: 0.7em;
+            border-radius: var(--BordaPoucoRedonda--);
+            margin-left: -0.8em;
+        }
+
+        /* Produto desfoque */
+        .margem-lucro{
+            width: 15em;
+            height: 11em;
+        }
+        .margem-lucro input{
+            margin-top: 2em;
+        }
+        .margem-lucro button{
+            margin-top: 0.8em;
+            width: 8em;
+        }
+
+        /* Editar Produto */
+        .edicao{
+            height: 24em;
+            width: 14em;
+            margin-left: 1.3em;
+        }
+        .nome-produto{
+            margin-top: 3em;
+        }
+        .botoes-edicao{
+            flex-direction: unset;
+            margin-left: -1.3em;
+            transform: scale(0.9);
+        }
+
+        
+        /* Cadastro do insumo */
+        .cardastro{
+            width: 14.5em;
+            height: 27em;
+        }
+        
+
+        /* Tabela */
+        .card {
+            width: 15em;
+        }
+        .card table{
+            transform: scale(0.7);
+        margin-top: -2em;
+        }
+        .card .BotaoVerde{
+            height: 1.5em;
+            width: 2em;
+        }
+        
+        /* Insumo */
+        .campo-demonstrar{
+            width: 16.5em;
+            height: 35em;
+        }
+        .insumos{
+            width: 13em;
+            margin-left: 0.3em;
+            height: 14em;
+        }
+
+        .insumos .info{
+            margin-left: -1em;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+        .insumos .BotaoVermelho{
+            margin-left: -1.2em;
+        }
+
+        /* cadastro De insumo */
+    }

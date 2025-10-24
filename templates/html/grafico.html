@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Gráficos</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+    <main class="d-flex">
+
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+        <section class="lucratividade">
+            <h1>Gráficos do lucro</h1>
+            <div class="graficos d-flex">
+                <div class="graficos-card">
+                    <img src="../../static/img/lucroporprodutografico.png" alt="Gráfico de Lucro por Produto">
+                    <p>Lucro por Produto</p>
+                </div>
+                <div class="graficos-card">
+                    <img src="../../static/img/cadaprodutografico.png" alt="Gráfico de Contribuição de cada produto para o lucro total">
+                    <p>Contribuição de cada produto para o lucro total
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+   <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

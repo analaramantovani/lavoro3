@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+
+   <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <div class="celularCabe">
+            <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+            <button id="tresRiscos" class="botaohomeLogado" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <a href="logout" id="Fechar" class="logout">Fechar</a>
+                <a href="perfil" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="d-flex">
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="perfil" class="linksn d-flex"><img src="../../static/img/Pessoa.png" alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png" alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png" alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png" alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+
+        <div class="edicao">
+            <h2>Editar Produto</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+            <form method="POST" action="{{ url_for('editarProduto', id=produto[0]) }}">
+                <div class="nome-produto">
+                    <label for="nome">Nome do produto</label>
+                    <input type="text" id="nome" name="nome" value="{{ produto[1] }}" required>
+                </div>
+
+                <div class="tempo-preparo">
+                    <label for="preparo">Preparo</label>
+                    <textarea id="preparo" name="preparo" rows="5">{{ produto[2] }}</textarea>
+                </div>
+
+                <div class="preco-venda">
+                    <label for="preco">Preço de Venda (R$)</label>
+                    <input type="number" step="0.01" id="preco" name="preco" value="{{ produto[3] }}" required>
+                </div>
+
+                <div class="margem-lucro">
+                    <label for="margem">Margem de Lucro (%)</label>
+                    <input type="number" step="0.01" id="margem" name="margem" value="{{ produto[4] }}" required>
+                </div>
+
+                <!-- A seção de insumos relacionados não está implementada no main.py, então a manterei como um placeholder/comentário -->
+                <!--
+                <div class="insumosP d-flex">
+                    <p>Insira aqui a lógica para insumos do produto</p>
+                </div>
+                -->
+
+                <div class="botoes-edicao d-flex">
+                    <a href="{{url_for('produtos')}}" class="BotaoVermelho">Cancelar</a>
+                    <button type="submit" class="BotaoVerde">Salvar Edição</button>
+                </div>
+            </form>
+        </div>
+    </main>
+   <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

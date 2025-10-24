@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <script src="../../static/js/app.js"></script>
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro" class="logo">
+        <button id="tresRiscos" class="botaohome" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="fundobarra2 d-flex">
+            <nav class="navegar d-flex">
+                <button id="Fechar" class="fechar">Fechar</button>
+                <a href="/" class=" linksn d-flex"><img class="casa" src="../../static/img/Icone_casa.png"
+                        alt="Icone de Casa">Home</a>
+                <a href="login" class=" d-flex"><img src="../../static/img/Pessoa.png" alt="Pessoa">Login</a>
+                <a href="cadastro.html" class="linksn d-flex"><img src="../../static/img/Icone_Prancheta.png"
+                        alt="Icone da Caderneta">Cadastre-se</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="fundo-cadastro">
+
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+            <div>
+                <form class="form-cadastro "  action="{{ url_for('cadastro') }}" method="POST" >
+                    <h1 class="titulo-cadastro">Cadastre-se!</h1>
+                    <br>
+                    <div class="cadastro-nome">
+                        <label class="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                    </div>
+
+                    <div class="cadastro-telefone">
+                        <label class="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Telefone" max="99999999999" required>
+                    </div>
+
+                    <div class="cadastro-email">
+                        <label class="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="cadastro-senha">
+                        <label class="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" labels="Adicione uma senha" placeholder="Senha" required>
+                    </div>
+
+                    <div class="cadastro-confirma">
+                        <label class="confirma-senha">Confirmar senha</label>
+                        <input type="password" id="senha_c" name="senha_c" labels="Confirme sua senha" placeholder="Confirmar senha"
+                            required>
+                    </div>
+                    <br>
+                    <button class="BotaoVerde" type="submit">Cadastrar</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div>
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div>
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

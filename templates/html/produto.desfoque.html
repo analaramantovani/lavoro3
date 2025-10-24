@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margem de lucro</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/responsivo.css">
+    <link rel="shortcut icon" href="../../static/img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+        <a type="submit" class="botao-sair linkUnico" href="logout">Sair</a>
+    </header>
+
+
+    <main class="d-flex">
+        <div class="fundobarra">
+            <h4> Funcionalidades </h4>
+            <nav class="navegar d-flex">
+                <a href="{{url_for('perfil')}}" class="linksn d-flex"><img src="../../static/img/Pessoa.png"
+                        alt="Icone de pessoa">Perfil</a>
+                <a href="{{url_for('insumos')}}" class="linksn d-flex"><img src="../../static/img/carrinho_insumos.png"
+                        alt="Icone de Insumos">Insumos</a>
+                <a href="{{url_for('produto')}}" class="linksn d-flex"><img src="../../static/img/caixa_de_produto.png"
+                        alt="Icone da caixa de produtos">Produtos</a>
+                <a href="{{url_for('lucro')}}" class="linksn d-flex"><img src="../../static/img/icone_lucratividade.png"
+                        alt="Icone de um saco de dinheiro">Lucratividade</a>
+            </nav>
+        </div>
+
+
+
+
+
+        <div class="margem-lucro">
+            <label for="margem">Margem de lucro desejada</label>
+            <input type="text" id="margem" placeholder="Digite a margem (%)">
+            <button type="submit" class="BotaoVerde"><a href="{{url_for('produtoIndividual')}}">Salvar</a></button>
+        </div>
+    </main>
+    </div>
+
+
+
+
+
+    <footer>
+        <div class="logo-footer">
+            <img src="../../static/img/logo.png" alt="Logo da Lavoro">
+            <p>© 2025 Lavoro – Todos os direitos reservados</p>
+        </div>
+        <div class="contato">
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_localização.png" alt="Ícone de localização">
+                <p>Rua Barão do Rio Branco - Birigui/SP</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Icone_telefone.png" alt="Ícone de telefone">
+                <p>(11) 99999-9999</p>
+            </div>
+            <div class="d-flex meios-contatos">
+                <img src="../../static/img/Caixa_de_email.png" alt="Ícone de email">
+                <p>Lavoro@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>

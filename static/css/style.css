@@ -1,0 +1,1507 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+}
+
+ :root {
+    --BegeEscuro--: #A68C69;
+    /*Cor principal*/
+    --BegeClaro--: #F0E5C9;
+    /*Cor principal*/
+    --VerdeEscuro--: #878F55;
+    /*Cor Secundaria*/
+    --Preto--: #000000;
+    /*Cor Secundaria*/
+    --VermelhoPastel--: #D74747;
+    /*Cor Botão*/
+    --Branco--: #FFFFFF;
+    /*Cor Fundo*/
+    --CinzaClaro--: #F5F5F5;
+    /*Cor Detalhes*/
+    --CinzaEscuro--: #E9E9E9;
+    /*Cor Detalhes*/
+    --titulohome--: #785337;
+    /*Cor Título Home*/
+    --subtitulohome--: #876434;
+    /*Cor Subtítulo Home*/
+    --verderodape--: #606831;
+    /*Cor NavegarSanduiche*/
+    --BegeNavegar--: #a68c697e;
+    /*Cor Rodapé*/
+    --depoimentos--: #8B9550;
+    --fundobeneficios--: #ADB86C;
+    --textobeneficiosh4--: #343724;
+    --titulobeneficios--: #A68C69;
+    --fundoformulario--: #BBC09D;
+    --funcionalidades--: #D7DFAA;
+    --funcoeslucro--: #9BA657;
+    --tabela--: #ADB86C;
+    --fundo--tabela: #B9A07D;
+    /*Numeração*/
+    --BordaMuitoRedonda--: 2em;
+    --BordaPoucoRedonda--: 0.6em;
+    --TamanhoBotaoSair--: 0.9em 1.6em;
+    --TamanhoBotao--: 0.5rem 2rem;
+    --TamanhoBotaoAd--: 0.4rem 1rem;
+}
+/*Flash*/
+/* Estilo das mensagens de flash */
+.flash-messages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.flash {
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 10px;
+    font-weight: bold;
+    max-width: 600px;
+}
+
+/* Tipos de flash */
+.flash.success {
+    background-color: #2e7d32;
+    color: #d0ffd0;
+}
+
+.flash.error {
+    background-color: #c62828;
+    color: #ffdada;
+}
+
+.flash.info {
+    background-color: #1565c0;
+    color: #d0e7ff;
+}
+
+
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+a {
+    color: var(--Branco--);
+    text-decoration: none;
+}
+
+.linkUnico{
+    color: var(--Preto--);
+}
+
+/*Botões Em Geral*/
+
+.botaohomeLogado{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3em;
+    height: 1.6em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 4em;
+}
+
+.botaohomeLogado span{
+     display: block;
+    height: 0.4em;
+    background: var(--BegeEscuro--);
+    border-radius: var(--BordaMuitoRedonda--);
+}
+
+.botao-sair {
+    background-color: var(--VermelhoPastel--);
+    padding: var(--TamanhoBotaoSair--);
+    border: none;
+    border-radius: var(--BordaMuitoRedonda--);
+    margin-right: 1em;
+    color: var(--Branco--);
+}
+
+.botao-sair:hover {
+    transform: scale(1.05);
+    /* Cresce um pouco ao passar o mouse */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    background-color: var(--Branco--);
+    border: var(--Preto--) 0.1em solid;
+    color: var(--Preto--);
+}
+
+.linkUnico:hover{
+    color: var(--Preto--);
+}
+
+.celularCabe{
+    display: flex;
+    align-items: center;
+}
+
+.BotaoVermelho {
+    background: var(--VermelhoPastel--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
+}
+
+.BotaoVerde {
+    background: var(--VerdeEscuro--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
+}
+
+.botaocadastro {
+    background-color: var(--BegeEscuro--);
+    color: var(--Branco--);
+    padding: 0.9rem 5rem;
+    border-radius: var(--BordaMuitoRedonda--);
+    position: absolute;
+    margin-left: -11rem;
+    margin-top: 4rem;
+    font-size: 1.5em;
+    box-shadow: 0 3px 10px #523925; 
+   
+}
+
+.BotaoMarrom {
+    background: var(--BegeEscuro--);
+    padding: var(--TamanhoBotaoAd--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    margin-left: 3em;
+    font-size: large;
+    font-size: 15.6px; 
+    padding: 10px 10px; 
+    border-radius: 5px;
+}
+
+.botaohome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3em;
+    height: 1.6em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 4em;
+    
+}
+
+.botaohome span {
+    display: block;
+    height: 0.4em;
+    background: var(--BegeEscuro--);
+    border-radius: var(--BordaMuitoRedonda--);
+}
+
+
+.fechar{
+    border: none;
+    background: none;
+    color: var(--Branco--);
+    font-size: larger;
+    margin-left: 0.3em;
+}
+
+/* BARRA DE NAVEGAÇÃO DO DESKTOP*/
+.navegar {
+    flex-direction: column;/* Organiza os itens em coluna */  
+    text-decoration: none; /* Remove o sublinhado de links */ 
+    align-items: baseline;  /* Alinha os itens no eixo transversal à linha de base */ 
+    margin-left: 3vh; /* Define uma margem à esquerda de 3vh */ 
+}
+
+.navegar a {
+    color: var(--Branco--); /* Define a cor do texto como branco */ 
+    margin-top: 2vh;  /* Define uma margem superior de 2vh */ 
+    align-items: center;/* Alinha os itens do link no centro */  
+}
+
+.fundobarra {
+
+    background-color: var(--BegeEscuro--); /* Define a cor de fundo da barra lateral */  
+    min-height: calc(100vh - 372px);  /* Define a altura da barra */ 
+    width: 35vh;  /* Define a largura da barra */ 
+    color: var(--Branco--); /* Define a cor do texto como branco */ 
+    padding: 1em 0em 0em 1em;  /* Adiciona o padding (espaço interno) */  
+}
+
+.fundobarra2 {
+    background-color: var(--BegeNavegar--); /* Define a cor de fundo para um tom de bege */ 
+    color: var(--Branco--); /* Define a cor do texto como branco */   
+    padding: 0.4em; /* Adiciona o padding (espaço interno) */ 
+    flex-direction: column; /* Organiza os itens no eixo vertical (coluna) */ 
+    position: absolute;/* Posiciona o elemento de forma absoluta */  
+    top: -16em; /* Move o elemento PRA CIMA  */ 
+    right: 0em;/* Define que o elemento ficará à DIREITA da tela */  
+
+}
+
+.fundobarra3 {
+    background-color: var(--BegeNavegar--);/* Define a cor de fundo para um tom de bege */  
+    color: var(--Branco--); /* Define a cor do texto como branco */ 
+    padding: 0.4em;  /* Adiciona o padding (espaço interno) */
+    flex-direction: column; /* Organiza os itens no eixo vertical (coluna) */ 
+    position: absolute;/* Posiciona o elemento de forma absoluta */  
+    top: 0em;/* Define que o elemento começa no topo da tela */  
+    right: 0em; /* Define que o elemento ficará à direita da tela */  
+    transition: all 0.5s ease-in-out;
+}
+
+.casa {
+    width: 31px;/* Define a largura do ícone */  
+    height: 32px;/* Define a altura do ícone como 32px  */ 
+}
+
+/* HOME - ANA */
+
+header {
+    display: flex; /* Usa flexbox para organizar os elementos horizontalmente */
+    justify-content: space-between; /* Espaça os elementos igualmente com ESPAÇO ENTRE ELES */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 0.5rem 0.5rem; /* Adiciona preenchimento interno ao topo e laterais */
+    background-color: var(--BegeClaro--); /* Define a cor de fundo do cabeçalho */
+    font-family: "Merriweather", serif; /* Define a fonte usada no cabeçalho */
+}
+
+.paginainicial {
+    background-image: url(../img/Imagem_de_fundo_home.png); /* Define uma imagem de fundo para a seção */
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área do elemento */
+    text-align: center; /* Centraliza o conteúdo do texto horizontalmente */
+    padding-top: 100px; /* Adiciona espaço acima do conteúdo (afasta do topo) */
+    height: 600px; /* Define a ALTURA da seção como 600px */
+    width: 100%; /* Define a LARGURA como 100% do elemento pai */
+}
+
+.textoinicial {
+    display: flex; /* Usa flexbox paraORGANIZAR OS ELEMENTOS HNA HORIZONTAL */
+    flex-direction: column; /* Define que os itens ficarão EMPILHADOS em coluna */
+
+    padding-right: 80px; /* Adiciona um espaçamento à direita */
+    max-width: 600px; /* Define uma largura máxima de 600px para o texto */
+    margin-left: auto; /* Empurra o bloco para a direita automaticamente */
+}
+
+.textoinicial h1 {
+    color: var(--titulohome--); /* Define a cor do título */
+    font-size: 3rem; /* Define o tamanho da fonte do título */
+    font-family: "Merriweather", serif; /* Aplica a fonte serifada Merriweather */
+    margin-top: 20px; /* Adiciona margem superior ao título */
+    text-align: justify; /* Alinha o texto à direita */
+}
+
+.textoinicial p {
+    color: var(--subtitulohome--); /* Define a cor do parágrafo */
+    margin-top: 1rem; /* Adiciona uma margem superior */
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    margin-bottom: 240px; /* Adiciona uma grande margem inferior para espaçamento */
+    text-align: -webkit-left; /* Alinha o texto à direita */
+}
+.beneficios {
+    text-align: center; /* Centraliza o conteúdo do texto */
+    padding: 50px 20px; /* Espaçamento interno acima/abaixo e laterais */
+}
+
+.beneficios h3 {
+    margin-top: 2rem; /* Espaço acima do título */
+    font-size: 2rem; /* Tamanho da fonte do título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    color: var(--titulobeneficios--); /* Cor do título */
+    font-family: "Merriweather", serif; /* Fonte serifada para o título */
+}
+
+.beneficios-pai {
+    display: flex; /* Exibe os filhos em linha com flexbox */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 50px; /* Espaçamento entre os itens */
+}
+
+.beneficio {
+    max-width: 250px; /* Largura máxima para o card */
+    text-align: center; /* Centraliza o conteúdo do card */
+}
+
+.beneficio img {
+    height: 150px; /* Altura fixa para a imagem */
+    width: auto; /* Largura proporcional à altura */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+.beneficio h4 {
+    background-color: var(--fundobeneficios--); /* Fundo do subtítulo */
+    color: var(--textobeneficiosh4--); /* Cor do texto do subtítulo */
+    padding: 8px 16px; /* Espaçamento interno */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-family: "Merriweather", serif; /* Fonte do subtítulo */
+    display: inline-block; /* Permite aplicar padding e margin corretamente */
+    margin-bottom: 15px; /* Espaço abaixo do subtítulo */
+}
+
+.beneficio p {
+    font-size: 1rem; /* Tamanho da fonte do parágrafo */
+    color: var(--Preto--); /* Cor do texto */
+}
+
+.funcionalidades {
+    background-color: var(--funcionalidades--); /* Cor de fundo da seção */
+    width: 100%; /* Ocupa toda a largura da tela */
+    padding: 10px 0px; /* Espaçamento interno */
+}
+
+.container-funcionalidades {
+    display: flex; /* Exibe os cards em linha com flexbox */
+    margin-top: 4rem; /* Espaço acima do container */
+    margin-left: 50px; /* Espaço à esquerda */
+    margin-bottom: 2rem; /* Espaço abaixo do container */
+    margin-right: 50px;
+    justify-content: center;
+    
+}
+
+.card-funcionalidade {
+    position: relative; /* Permite posicionar elementos filhos de forma absoluta */ 
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+}
+
+.card-funcionalidade img {
+    width: 80%; /* Imagem ocupa toda a largura do card */
+    display: block; /* Remove espaço embaixo da imagem */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas da imagem */
+}
+
+.card-funcionalidade p {
+    position: absolute; /* Posicionamento absoluto dentro do card */
+    bottom: 10px; /* Posicionado 10px do fundo */
+    left: 41%; /* Posicionado no meio horizontal */
+    transform: translateX(-50%); /* Centraliza perfeitamente no eixo X */
+    color: var(--Branco--); /* Cor do texto */
+    font-weight: 600; /* Peso da fonte */
+    font-size: 1.4rem; /* Tamanho do texto */
+    margin: 0; /* Remove margem padrão */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+.depoimentos {
+    background-color: var(--Branco--); /* Define o fundo branco para a seção de depoimentos */
+    padding: 40px 20px; /* Espaçamento interno acima/abaixo e nas laterais */
+    text-align: center; /* Centraliza o conteúdo da seção */
+}
+
+.depoimentos h3 {
+    font-size: 2rem; /* Tamanho da fonte do título */
+    font-family: "Merriweather", serif; /* Fonte serifada */
+    margin-bottom: 30px; /* Espaçamento abaixo do título */
+    background-color: var(--depoimentos--); /* Fundo colorido para o título */
+    display: inline-block; /* Permite aplicar padding e margens como um bloco */
+    padding: 10px 40px; /* Espaçamento interno do título */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas bem arredondadas */
+    color: var(--Branco--); /* Cor do texto do título */
+}
+
+.depoimentos-container {
+    display: flex; /* Exibe os cards de depoimento em linha */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 30px; /* Espaçamento entre os cards */
+}
+
+.card-depoimento {
+    background: var(--Branco--); /* Fundo branco para o card */
+    padding: 20px; /* Espaçamento interno do card */
+    width: 320px; /* Largura fixa para o card */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas levemente arredondadas */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidade */
+    text-align: left; /* Alinha o conteúdo do card à esquerda */
+}
+
+.card-depoimento .nome {
+    font-weight: bold; /* Deixa o nome em negrito */
+    margin-bottom: 5px; /* Espaçamento abaixo do nome */
+}
+
+.formulario {
+    background-color: var(--fundoformulario--); /* Fundo da seção de formulário */
+    padding: 3rem 2rem; /* Espaçamento interno (acima/abaixo e laterais) */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.formulario h3 {
+    font-size: 2rem; /* Tamanho da fonte do título */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    font-weight: bold; /* Título em negrito */
+    color: var(--Branco--); /* Cor do texto */
+    font-family: "Merriweather", serif; /* Fonte serifada */
+}
+
+.formulario form {
+    max-width: 30rem; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    display: flex; /* Usa flexbox para organizar os campos */
+    flex-direction: column; /* Organiza os campos em coluna */
+    gap: 1.2rem; /* Espaçamento entre os campos */
+    text-align: left; /* Alinha o conteúdo dos campos à esquerda */
+}
+
+.formulario label {
+    font-weight: 600; /* Peso médio da fonte */
+    color: var(--verderodape--); /* Cor do texto do rótulo */
+    margin-bottom: 0.3rem; /* Espaço abaixo do rótulo */
+
+}
+input.avaliacao,
+textarea.avaliacao {
+    height: 30px; /* Altura do campo de avaliação */
+    width: 100%; /* Largura total do elemento pai */
+    background-color: var(--Branco--); /* Fundo branco para o campo */
+    border: none; /* Remove a borda padrão */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas bem arredondadas */
+    padding: 10px; /* Espaço interno entre o conteúdo e a borda */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    margin-top: 10px; /* Espaço acima do campo */
+    margin-bottom: 10px; /* Espaço abaixo do campo */
+}
+
+.stars {
+    display: flex;
+    gap: 8px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.stars span {
+    color: #ccc;
+    transition: color .2s;
+}
+
+.stars span.active {
+    color: gold;
+}
+
+
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: var(--BegeClaro--); /* Cor de fundo do rodapé */
+    padding: 1rem; /* Espaçamento interno do rodapé */
+    font-size: 0.9rem; /* Tamanho da fonte do rodapé */
+    color: var(--verderodape--); /* Cor do texto do rodapé */
+    display: flex; /* Organiza os elementos com flexbox */
+    justify-content: space-between; /* Espaça os elementos igualmente nas extremidades */
+    gap: 5rem; /* Espaçamento entre os elementos internos */
+}
+
+
+
+/* PAGINA DE LUCRO */
+.lucratividade {
+
+    margin: auto; /* Centraliza o elemento horizontalmente */
+    margin-bottom: 3em;
+
+}
+
+.lucro h1 {
+    font-family: "Merriweather", serif; /* Fonte serifada para o título */
+    justify-content: center; /* Centraliza (ineficaz aqui, pois não está em flex) */
+    align-items: center; /* Centraliza verticalmente (ineficaz fora de flex) */
+    text-align: center; /* Centraliza o texto */
+    margin: 2em; /* Espaçamento ao redor do título */
+    color: var(--subtitulohome--); /* Cor do título */
+}
+
+.funcoes {
+    display: flex;
+    gap: 2em; /* Espaço entre os elementos filhos */
+    justify-content: center; /* Centraliza horizontalmente (efetivo com flex) */
+    align-items: center; /* Alinha verticalmente (efetivo com flex) */
+    text-align: center; /* Centraliza o texto */
+}
+
+.funcoes-card {
+    background-color: var(--funcoeslucro--); /* Fundo do card de função */
+    padding: 2rem 2rem; /* Espaçamento interno */
+    margin: 0rem; /* Remove margens externas */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas bem arredondadas */
+}
+
+.funcoes-card p {
+    color: var(--Branco--); /* Cor do texto */
+    font-size: 0.9em; /* Tamanho da fonte do parágrafo */
+}
+
+.funcoes-card h3 {
+    color: var(--Branco--); /* Cor do título */
+    font-size: 1.4em; /* Tamanho da fonte do título */
+    font-weight: 8em; /* (Atenção: valor incorreto, deveria ser numérico como 800) */
+    margin-bottom: 1em; /* Espaçamento abaixo do título */
+}
+
+.funcoeslucro {
+    display: flex; /* Usa flexbox para layout horizontal */
+    gap: 4em; /* Espaço entre os elementos */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    margin-top: 3em; /* Espaço acima do bloco */
+    text-align: center; /* Centraliza o texto */
+}
+
+.funcoeslucro-card {
+    background-color: var(--Branco--); /* Fundo branco do card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    padding: 2rem 2rem; /* Espaçamento interno */
+}
+
+.funcoeslucro-card h3 {
+    color: var(--funcoeslucro--); /* Cor do título */
+    margin-top: 20px; /* Espaço acima do título */
+    font-weight: 700; /* Peso da fonte em negrito */
+    font-size: 1.3em; /* Tamanho da fonte */
+}
+
+.funcoeslucro-card img {
+    height: 15.6vh; /* Altura da imagem em proporção à altura da viewport */
+}
+
+.lucro {
+
+    margin-left: 13em; /* Espaço à esquerda do bloco 'lucro' */
+    margin-bottom: 4em; /* Espaço abaixo do bloco 'lucro' */
+
+}
+
+
+
+/* PAGINA DE GRAFICOS*/
+.lucratividade h1 {
+    font-family: "Merriweather", serif; /* Fonte serifada para o título */
+    justify-content: center; /* (Ineficaz aqui, pois não está em um container flex) */
+    align-items: center; /* (Ineficaz aqui também, aplicável a elementos flex) */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 2em; /* Espaçamento ao redor do título */
+    color: var(--subtitulohome--); /* Cor do texto definida pela variável */
+}
+
+.graficos {
+    gap: em; /* Espaçamento entre os elementos filhos (efetivo com flex) */
+    justify-content: center; /* Centraliza os itens horizontalmente (com flex) */
+    align-items: center; /* Alinha os itens verticalmente (com flex) */
+    margin-left: 3em; /* Espaço à esquerda do container */
+}
+
+.graficos-card {
+    background-color: var(--Branco--); /* Cor de fundo branca */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave ao redor do card */
+    padding: 4rem 4rem; /* Espaçamento interno do card */
+    margin: 1rem; /* Espaço externo ao redor do card */
+}
+
+.graficos-card img {
+    width: 20em; 
+}
+
+.graficos-card p {
+    color: var(--funcoeslucro--); /* Cor do texto baseada na variável */
+    font-weight: 700; /* Peso da fonte em negrito */
+    font-size: 1.2rem; /* Tamanho da fonte do parágrafo */
+    align-items: center; /* ALINHA OS ITENS  */
+    text-align: center; /* Centraliza o texto dentro do parágrafo */
+}
+
+
+
+/* pagina tabela - ana */
+.container {
+    display: flex; /* Usa Flexbox para organizar os elementos filhos */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    margin: 0 auto; /* Centraliza o container horizontalmente na página */
+}
+
+.card {
+    background-color: var(--fundo--tabela); /* Cor de fundo do card */
+    padding: 30px; /* Espaçamento interno do card */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas levemente arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    text-align: center; /* Centraliza o conteúdo do texto */
+    max-width: 600px; /* Largura máxima do card */
+    flex-direction: column; 
+    margin: 0 auto; /* Centraliza o card horizontalmente */
+    margin-top: 4em; /* Espaço acima do card */
+    margin-bottom: 4em; /* Espaço abaixo do card */
+    align-items: center; /* Centraliza os itens no eixo transversal (vertical) */
+
+}
+
+.card h2 {
+    color: var(--Branco--); /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.card table {
+    width: 100%; /* Faz a tabela ocupar toda a largura disponível do card */
+    border-collapse: collapse; /* Remove espaçamento entre as bordas das células */
+    background-color: var(--Branco--); /* Fundo branco para a tabela */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas arredondadas para a tabela */
+}
+
+.card thead {
+    background-color: var(--tabela--); /* Cor de fundo para o cabeçalho da tabela */
+    color: var(--Branco--); /* Cor do texto do cabeçalho */
+}
+
+.card td {
+    padding: 12px; /* Espaçamento interno das células */
+    text-align: center; /* Centraliza o conteúdo das células */
+    border-bottom: 1px solid var(--Branco--); /* Linha divisória entre as linhas */
+}
+
+.card .BotaoVerde{
+    margin-top: 0.7em;
+}
+
+/*css edicao_perfil:*/
+.editPTamanho {
+    width: 72em; /* Largura total do container de edição */
+    margin-left: 7em; /* Espaço à esquerda */
+    margin-top: 6em; /* Espaço acima */
+    margin-bottom: 8em; /* Espaço abaixo */
+    gap: 6em; /* Espaçamento entre os elementos internos (efetivo se display: flex ou grid) */
+}
+
+.foto-pessoa2 {
+    width: 17em; /* Largura da imagem da pessoa */
+    height: 17em; /* Altura da imagem da pessoa */
+    border-radius: 50%; /* Deixa a imagem completamente circular */
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Sombra suave ao redor */
+    background: var(--Branco--); /* Cor de fundo (visível se imagem tiver transparência) */
+}
+.form-edicao-perfil{
+    margin-top: 2em;
+}
+
+.titulo-edicao-perfil{
+    color: #7d8b41;
+}
+.botaoEditP {
+    gap: 18em; /* Espaçamento entre os botões (efetivo com display: flex ou grid) */
+}
+
+.foto {
+    margin-top: 5em; /* Espaçamento acima do elemento com classe .foto */
+}
+
+/* css perfil */
+
+.foto-pessoa {
+    width: 10em; /* Largura da imagem do perfil */
+    height: 10em; /* Altura da imagem do perfil */
+    border-radius: 50%; /* Imagem em formato circular */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Sombra ao redor da imagem */
+    background: var(--Branco--); /* Cor de fundo */
+}
+
+.infPessoa {
+    margin-left: 15em; /* Espaço à esquerda do bloco de informações */
+    margin-top: 6em; /* Espaço acima do bloco */
+    margin-bottom: 4em; /* Espaço abaixo do bloco */
+}
+
+.PessoaB {
+    margin-top: 2em; /* Espaçamento acima do botão ou elemento */
+    width: 3em; /* Largura definida */
+}
+
+.boxPessoa {
+    justify-items: center; /* Centraliza os itens no eixo horizontal (efetivo em grid) */
+}
+
+.info-pessoal {
+    margin-left: 5em; /* Espaço à esquerda do container de informações */
+    flex-direction: column; /* Direção dos itens em coluna (efetivo com display: flex) */
+    gap: 2em; /* Espaço entre os itens */
+}
+
+.info-pessoal h1 {
+    color: var(--depoimentos--); /* Cor do título */
+}
+.nome-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    margin-left: 0.5em;
+    }
+    .email-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    margin-left: 0.5em;
+    }
+    .telefone-usuario {
+    color: #8B9550;
+    font-family: 'Lato';
+    font-weight: lighter;
+    font-size: 1em;
+    margin-left: 0.5em;
+    }
+
+/*LOGIN:*/
+.titulo-login {
+    margin-top: 9vh; /* Espaço acima em altura da viewport */
+    margin-bottom: 1em;
+    margin-left: 88vh; /* Espaço à esquerda em altura da viewport (pode ser estranho usar vh para margem horizontal) */
+    color: #878F55; /* Cor do texto */
+}
+
+.form-login {
+    background-color: rgba(245, 245, 245, 0.7); /* Fundo branco semi-transparente */
+    padding: 7vh; /* Espaçamento interno proporcional à altura da viewport */
+    width: 75vh; /* Largura em altura da viewport (unidade incomum para largura) */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    height: 32vh; /* Altura em altura da viewport */
+    box-shadow: 0 4px 6px rgb(0 0 0 / 20%); /* Sombra leve */
+    margin-left: 59vh; /* Margem esquerda */
+    margin-bottom: 4em; /* Margem inferior */
+}
+
+input .email-login{
+    background-color: #FFFFFF;
+}
+
+.email-login {
+    display: flex; /* Flexbox para o container do campo email */
+    flex-direction: column; /* Itens em coluna */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+.senha-login {
+    display: flex; /* Flexbox para o container do campo senha */
+    flex-direction: column; /* Itens em coluna */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+.entrar-login {
+    background-color: rgba(155, 166, 87, 1); /* Cor verde sólida */
+    height: 5vh; /* Altura do botão */
+    width: 20vh; /* Largura do botão */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    font-family: Merriweather; /* Fonte do texto */
+    color: #FFFFFF; /* Cor branca do texto */
+    border: none; /* Sem borda */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra do botão */
+}
+
+.cadastro-login {
+    color: #2d3018; /* Cor do texto */
+    text-align: center; /* Texto centralizado */
+    border: var(--Preto--) 0.1em solid; /* Borda fina preta */
+}
+
+.conjunto-login {
+    align-items: center; /* Alinha os itens no centro no eixo cruzado (necessita display flex) */
+    justify-content: center;
+    gap: 0.5em;
+
+}
+
+.botaoentrarlogin{
+    background: var(--VerdeEscuro--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+.botaocadastrologin{
+    background: var(--BegeEscuro--);
+    padding: var(--TamanhoBotaoAd--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: 10px;
+    margin-left: 3em;
+    font-size: large;
+    font-size: 15.6px;
+    padding: 10px 10px;
+}
+
+/* css cadastro: */
+
+.img-cadastro {
+    width: 100vh; /* Largura da imagem baseado na altura da viewport */
+    height: 55vh; /* Altura da imagem */
+}
+
+.form-cadastro {
+    background-color: rgba(245, 245, 245, 0.6); /* Fundo semi-transparente */
+    padding: 8vh; /* Espaçamento interno proporcional à altura da viewport */
+    width: 50vh; /* Largura do formulário */
+    margin-left: 72vh; /* Margem esquerda */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+.titulo-cadastro {
+    color: rgba(155, 166, 87, 1); /* Cor verde sólida */
+    font-family: Merriweather; /* Fonte Merriweather */
+}
+
+.cadastro-nome,
+.cadastro-telefone,
+.cadastro-email,
+.cadastro-senha,
+.cadastro-confirma {
+    display: flex; /* Flexbox para campos do formulário */
+    flex-direction: column; /* Itens em coluna */
+    text-align: left; /* Texto alinhado à esquerda */
+    
+}
+
+.fundo-cadastro {
+    background-image: url('/static/img/imgcadastro.png'); /* Imagem de fundo */
+    background-repeat: no-repeat; /* Sem repetição da imagem */
+    background-position: center; /* Centraliza a imagem */
+    background-size: cover; /* Cobre todo o container */
+    text-align: center; /* Texto centralizado */
+    padding-top: 100px; /* Espaço acima */
+    height: 790px; /* Altura fixa */
+}
+
+input {
+    height: 3vh; /* Altura dos inputs */
+    width: 34vh; /* Largura dos inputs */
+    background-color: #F5F5F5; /* Fundo cinza claro */
+    border: none; /* Sem borda */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    padding: 5px; /* Espaçamento interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra leve */
+    margin-top: 10px; /* Espaço acima */
+    margin-bottom: 10px; /* Espaço abaixo */
+    justify-content: center; 
+}
+
+/* MARCELA CADASTRAR Produto e Insumo*/
+.cadastro-geral {
+    color: var(--VerdeEscuro--); /* Cor do texto */
+    margin-bottom: 3em; /* Margem inferior */
+    text-align: center; /* Texto centralizado */
+    align-items: center; /* Alinha itens ao centro (necessita display:flex para funcionar) */
+    flex-direction: column; /* Direção dos itens em coluna (necessita display:flex) */
+    margin-left: 20em; /* Margem esquerda */
+    margin-top: 7em; /* Margem superior */
+}
+
+.cardastro {
+    background: #c8b394; /* Fundo bege */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas arredondadas */
+    width: 480px; /* Largura fixa */
+    text-align: left; /* Texto alinhado à esquerda */
+
+}
+
+.cardastro input {
+    width: 100%; /* Largura total do container pai */
+    padding: auto; /* ❗ Valor inválido para padding (padding não aceita 'auto') */
+    margin-top: 20px; /* Espaço acima */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    border: none; /* Sem borda */
+    box-shadow: 1px 1px 3px rgba(37, 33, 33, 0.267); /* Sombra leve */
+}
+
+.ingredientes {
+    gap: 18em; /* Espaço entre itens (funciona com flex ou grid) */
+    margin-bottom: 1EM; /* Margem inferior (use 'em' minúsculo para consistência) */
+    color: var(--Preto--); /* Cor do texto */
+}
+
+.botoes {
+    display: flex; /* Define container como flexbox */
+    justify-content: space-between; /* Espaça os itens igualmente entre as extremidades */
+}
+
+/* editar insumo e produto Marcela */
+
+.edicao {
+    background-color: #f5f1ed; /* Fundo bege claro */
+    padding: 20px 30px; /* Espaçamento interno vertical e horizontal */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    width: 32em; /* Largura fixa */
+    margin-left: 12em; /* Margem esquerda */
+    height: 22em; /* Altura fixa */
+    margin-top: 4em; /* Margem superior */
+    margin-bottom: 4em;
+}
+
+.edicao h2 {
+    text-align: center; /* Texto centralizado */
+    color: #7d8b41; /* Cor verde-oliva */
+    margin-bottom: 25px; /* Espaço abaixo */
+}
+
+form label {
+    display: block; /* Label ocupa linha inteira */
+    margin-bottom: 5px; /* Espaço abaixo */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #333; /* Cor cinza escuro */
+}
+
+form input {
+    width: 100%; /* Largura total do container pai */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaço abaixo */
+    border-radius: var(--BordaPoucoRedonda--); /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.botoes-edicao {
+    gap: 16em; /* Espaço entre botões (funciona se container for flex ou grid) */
+}
+
+
+
+/*Matheus Produtos*/
+.campo-demonstrar {
+    margin: 0 auto; /* Centraliza horizontalmente */
+    flex-direction: column; /* Define direção da flexbox (necessita display:flex) */
+    margin-top: 2em; /* Margem superior */
+    margin-bottom: 2em; /* Margem inferior */
+    width: 38em; /* Largura fixa */
+    background-color: var(--CinzaClaro--); /* Fundo cinza claro */
+    padding: 1em; /* Espaçamento interno */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    color: var(--VerdeEscuro--); /* Cor do texto */
+}
+
+.info{
+    gap: 4em;
+}
+
+.botoes-IP {
+    gap: 2em; /* Espaço entre os botões (funciona se container for flex ou grid) */
+}
+
+.produto {
+     align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    text-align: center; /* Texto centralizado */
+    justify-content: space-between; /* Espaça itens igualmente (flex container necessário) */
+    gap: 2.8em; /* Espaço entre itens */
+    margin: 0 1.2em 0 1.2em; /* Margem horizontal */
+    background-color: var(--Branco--); /* Fundo branco */
+    padding: 0.7em 3em 0.9em 2.5em; /* Espaçamento vertical e horizontal */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    color: var(--Preto--); /* Cor do texto */
+    margin-top: 1.5em;
+    border-style: groove;
+}
+
+.centralização {
+    margin: 2em; /* Margem em todos os lados */
+    display: flex; /* Define flex container */
+    gap: 0.1em; /* Espaço entre itens */
+    flex-direction: column; /* Direção coluna */
+}
+
+.campo-demonstrar-produto h3 {
+    margin-left: 1.4em; /* Margem esquerda */
+}
+
+.produto .BotaoVermelho {
+    background-color: var(--VermelhoPastel--); /* Fundo vermelho pastel */
+    padding: 0.6em; /* Espaçamento interno */
+}
+
+.insumos {
+    align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    text-align: center; /* Texto centralizado */
+    justify-content: space-between; /* Espaça itens igualmente (flex container necessário) */
+    gap: 2.8em; /* Espaço entre itens */
+    margin: 0 1.2em 0 1.2em; /* Margem horizontal */
+    background-color: var(--Branco--); /* Fundo branco */
+    padding: 0.7em 3em 0.9em 2.5em; /* Espaçamento vertical e horizontal */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+    color: var(--Preto--); /* Cor do texto */
+    margin-top: 1.5em;
+    border-style: groove;
+}
+.icone-editar{
+    height: 2.8em;
+}
+.icone-excluir{
+    height: 2.8em;
+}
+
+.insumos a {
+    color: var(--Preto--); /* Cor dos links */
+}
+
+.insumos .BotaoVermelho {
+    background-color: var(--VermelhoPastel--); /* Fundo vermelho pastel */
+    padding: 0.6em; /* Espaçamento interno */
+}
+
+.campoDeBusca input {
+    width: 55vh; /* Largura do input */
+    height: 2.5em;
+    margin-top: 3em;
+    background-color: var(--Branco--);
+}
+
+.botoes2 .BotaoMarrom{
+    height: 1.5em;
+    width: 0.7em;
+    margin-top: 1.8em;
+    
+}
+
+.lupa-insumo{
+    margin-top: 1.5em;
+}
+.campo-produto-indiv {
+    background-color: var(--CinzaEscuro--); /* Fundo cinza escuro */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 2em; /* Margem superior */
+    margin-bottom: 2em; /* Margem inferior */
+    width: 38em; /* Largura fixa */
+    height: 24em; /* Altura fixa */
+    padding: 1em; /* Espaçamento interno */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+}
+
+.ad-insumos {
+    align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    gap: 25em; /* Espaço entre itens */
+}
+
+.TempoDoP {
+    margin: 1em 0 1em 0; /* Margem vertical */
+}
+
+.campo-lucro {
+    margin-top: 1em; /* Margem superior */
+    align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    gap: 14em; /* Espaço entre itens */
+}
+
+.insumosP {
+    align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    justify-content: center; /* Centraliza itens horizontalmente (flex container necessário) */
+    gap: 4.99em; /* Espaço entre itens */
+    margin: 0.8em 0em 0.6em 0em; /* Margem vertical */
+    background-color: var(--Branco--); /* Fundo branco */
+    padding: 0em 1em 0em 1em; /* Espaçamento horizontal */
+    border-radius: var(--BordaMuitoRedonda--); /* Bordas arredondadas */
+}
+
+
+
+.voltarP {
+    gap: 18em; /* Espaço entre itens */
+    margin-top: 2em; /* Margem superior */
+    align-items: center; /* Alinha itens ao centro (flex container necessário) */
+    text-align: center; /* Texto centralizado */
+}
+
+.campo-demonstrar h3 {
+    margin-left: 1em; /* Margem esquerda */
+    margin-top: 1.2em;
+}
+
+.campoDeBusca {
+    gap: 1em; /* Espaço entre itens */
+    display: flex; /* Define flex container */
+    height: 2em; /* Altura fixa */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+}
+
+.cadastro-geral h2{
+    line-height: 5em;
+}
+
+.cadastro-geral{
+    margin-top: 2em;
+}
+
+.botoes .BotaoVermelho{
+    border-radius: var(--BordaPoucoRedonda--);
+    height: 3em;
+    width: 10em;
+    font-size: 0.998em;
+    
+}
+.botoes{
+    display: inline;
+    margin-left: 5em;
+}
+
+.botoes .BotaoVerde{
+    height: 2.6em;
+    width: 8em;
+}
+
+
+
+/* Cadastrar produtos  */
+
+
+.selecionar-insumos {
+    
+    margin: 0 auto; /* Margem superior/inferior e centralizado horizontalmente */
+    text-align: center; /* Texto centralizado */
+    margin-left: 7.5em; /* Margem esquerda */
+    margin-top: 2em; /* Margem superior */
+    margin-bottom: 2em; /* Margem inferior */
+}
+
+.selecionar-insumos h2 {
+    color: var(--titulohome--); /* Cor do texto */
+    font-size: 1.6em; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    margin-left: 5em;
+}
+.selecionar-insumos .BotaoVerde{
+    margin-left: 7em;
+}
+
+.item {
+    display: flex; /* Container flexível */
+    justify-content: space-between; /* Espaça itens igualmente */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    background: #f6f6f6; /* Fundo cinza claro */
+    padding: 12px; /* Espaçamento interno */
+    margin: 12px 0; /* Margem vertical */
+    font-weight: bold; /* Texto em negrito */
+    color: #2d2d2d; /* Cor do texto */
+    border-radius: 20px; /* Bordas arredondadas */
+}
+
+.select {
+    background-color: #b3956d; /* Fundo marrom claro */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 6px 14px; /* Espaçamento interno */
+    font-size: 13px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor pointer ao passar o mouse */
+    transition: 0.3s; /* Transição suave */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre elementos */
+    width: 250px;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: var(--BegeClaro--);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    font-family: 'lato', sans-serif;
+    margin-left: 8em;
+    width: 25em;
+    height: 13em;
+}
+
+/* select */
+.busca-insumo {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: var(--fundo--tabela);
+    font-size: 16px;
+    color: var(--Preto--);
+    cursor: pointer;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.busca-insumo:focus {
+    border-color: var(--titulohome--);
+    box-shadow: 0 4px 10px rgba(85, 70, 29, 0.151);
+    outline: none;
+}
+
+/* Estilo do input */
+.item input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--BegeEscuro--);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.item input:focus {
+    border-color: var(--titulobeneficios--);
+    box-shadow: 0 4px 10px rgba(92, 63, 29, 0.2);
+    outline: none;
+}
+
+/* Label estilizado */
+.item label {
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Parágrafo de unidade de medida */
+.item p {
+    font-size: 17px;
+    color: #000000;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+/* Insumo selecionado */
+.fundo-registro-insumo{
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    background: var(--fundo--tabela); /* Fundo cinza claro */
+    padding: 12px; /* Espaçamento interno */
+    margin: 50px 0; /* Margem vertical */
+    border-radius: 20px; /* Bordas arredondadas */
+    margin-left: 16em;
+    height: 20em;
+    width: 30.3em;
+}
+
+.fundo-registro-insumo h3{
+    margin-left: 1em;   
+    font-size: 1.4em;      
+    font-weight: bold;    
+    color: #523925;   
+          
+}
+
+.TeButton {
+    display: flex;
+    margin-top: 2em;
+    gap: 14em;
+}
+ 
+.botao-mais {
+    background: var(--depoimentos--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);  
+    font-size: 1.2em; 
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    padding: 0.4em;
+}
+
+.insumo-select{
+    background-color: var(--Branco--);
+    padding: 0.5em;
+    height: 3em;
+    width: 28em;
+    margin-top: 3em;
+    border-radius: 1em;
+    border-style: ridge;
+    margin-left: 0.5em;
+}
+
+.botao-salvar-registro{
+    background-color: var(--depoimentos--);
+    padding: 0.5em;
+    height: 2em;
+    border-radius: 0.4em;
+    margin-left: 13em;
+    position: relative;
+    top: 3em;
+}
+
+.info-registro{
+    display: flex;
+    place-content: space-around;
+    margin-top: 1em;
+}
+
+
+
+/* Margem de lucro */
+
+.margem-lucro {
+    background-color: #c8b294; /* Fundo bege claro */
+    margin: 80px auto; /* Margem vertical e centralizado horizontalmente */
+    padding: 25px; /* Espaçamento interno */
+    border-radius: 15px; /* Bordas arredondadas */
+    text-align: center; /* Texto centralizado */
+}
+
+.margem-lucro input {
+    width: 100%; /* Largura total do container pai */
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    outline: none; /* Remove contorno ao focar */
+    font-size: 14px; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaço abaixo do input */
+}
+
+/* Mensagens Flash */
+
+.flash-messages {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: 50%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.6s ease;
+    align-items: center;
+    transform: translateX(-50%);
+    
+}
+
+
+.flash {
+    min-width: 320px;
+    max-width: 500px;
+    text-align: center;
+    padding: 18px 25px;
+    border-radius: 15px;
+    color: #000000;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+    border: none;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+    background-color: #f1b048e2;
+}
+
+.flash.success {
+    background-color: #9BA657; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    color: #000000;
+}
+
+.flash.error {
+    background-color: #e14646; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.flash.warning {
+   background-color: rgba(232, 183, 59, 0.959);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.buscarinsumos img {
+    height: 2em;
+}
+
+.buscarinsumos button {
+   display: flex;
+   
+}
+
+.editar {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+}
+
+.editar img {
+    width: 35px;
+    height: auto;
+
+}
+
+
+button.exclusao {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button.exclusao img {
+    width: 35px;
+    height: auto;
+}
+
+
+button.exclusao:hover img {
+    opacity: 0.7;
+}
+
+
+.icone-editar,
+.icone-excluir {
+    transition: opacity 0.3s;
+}
+
+
+button.exclusao:hover,
+.editar:hover {
+    opacity: 0.7;
+}
+
+.tabela-insumos-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--VerdeEscuro--);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabela-insumos-cabecalho p {
+    flex: 1;
+    text-align: center;
+}
+
+
+.insumos .info p {
+    flex: 1;
+    text-align: center;
+}
+
+
+.botoes-IP {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icone-editar, .icone-excluir {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
