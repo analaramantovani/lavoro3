@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="25">
+            <item index="0" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="1" class="java.lang.String" itemvalue="simple-websocket" />
+            <item index="2" class="java.lang.String" itemvalue="defusedxml" />
+            <item index="3" class="java.lang.String" itemvalue="h11" />
+            <item index="4" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="5" class="java.lang.String" itemvalue="bidict" />
+            <item index="6" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="7" class="java.lang.String" itemvalue="segno" />
+            <item index="8" class="java.lang.String" itemvalue="Flask-Bcrypt" />
+            <item index="9" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="10" class="java.lang.String" itemvalue="Flask" />
+            <item index="11" class="java.lang.String" itemvalue="blinker" />
+            <item index="12" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="13" class="java.lang.String" itemvalue="fdb" />
+            <item index="14" class="java.lang.String" itemvalue="python-engineio" />
+            <item index="15" class="java.lang.String" itemvalue="click" />
+            <item index="16" class="java.lang.String" itemvalue="wsproto" />
+            <item index="17" class="java.lang.String" itemvalue="bcrypt" />
+            <item index="18" class="java.lang.String" itemvalue="python-socketio" />
+            <item index="19" class="java.lang.String" itemvalue="fonttools" />
+            <item index="20" class="java.lang.String" itemvalue="colorama" />
+            <item index="21" class="java.lang.String" itemvalue="fpdf2" />
+            <item index="22" class="java.lang.String" itemvalue="pillow" />
+            <item index="23" class="java.lang.String" itemvalue="Flask-SocketIO" />
+            <item index="24" class="java.lang.String" itemvalue="validate-docbr" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

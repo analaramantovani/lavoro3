@@ -1505,3 +1505,12 @@ button.exclusao:hover,
     height: 20px;
     cursor: pointer;
 }
+
+.botaodecadastroinsumo{
+    background: var(--VerdeEscuro--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
+}

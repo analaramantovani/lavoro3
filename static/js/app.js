@@ -1,8 +1,7 @@
-
 window.document.addEventListener("DOMContentLoaded", function () {
 
 
-    const botaoTresbarras = document.getElementById('tresRiscos'); 
+    const botaoTresbarras = document.getElementById('tresRiscos');
     if (botaoTresbarras) {
         botaoTresbarras.addEventListener('click', function() {
 
@@ -16,7 +15,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
                 console.error("Elemento com a classe 'fundobarra2' não encontrado!");
             }
         });
-        
+
     } else {
         console.warn("Botão com ID 'tresRiscos' não encontrado no DOM!");
     }
@@ -28,7 +27,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
             if (fundoBarra2) {
                 fundoBarra2.classList.remove('fundobarra3');
                 fundoBarra2.classList.add('fundobarra2');
-                
+
             } else {
                 console.error("Elemento com a classe 'fundobarra3' não encontrado!");
             }
@@ -38,7 +37,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
         console.warn("Botão com ID 'Fechar' não encontrado no DOM!");
     }
 
-    /*Estrela Js*/ 
+    /*Estrela Js*/
 
     const stars = document.querySelectorAll("#stars span");
     const result = document.querySelector(".result");
@@ -60,65 +59,89 @@ window.document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-    }); 
+    });
 
-    //Maskara
-   (function () {
-      const input = document.getElementById('telefone');
+//    //Maskara
+//   (function () {
+//      const input = document.getElementById('telefone');
+//
+//      if (input){
+//      input.addEventListener('input', function (e) {
+//        const raw = this.value;
+//        // posição do cursor antes da formatação
+//        const cursorPos = this.selectionStart;
+//
+//        // quantos dígitos existiam antes do cursor
+//        const digitsBeforeCursor = raw.slice(0, cursorPos).replace(/\D/g, '').length;
+//
+//        // pega só dígitos e limita a 11
+//        let digits = raw.replace(/\D/g, '').slice(0, 11);
+//
+//        // formata
+//        const formatted = formatarTelefone(digits);
+//        console.log(formatted)
+//
+//        // escreve no campo
+//        this.value = formatted;
+//
+//        // calcula nova posição do cursor: acha a posição do N-ésimo dígito na string formatada
+//        let newPos = 0;
+//        if (digitsBeforeCursor === 0) {
+//          newPos = 0;
+//        } else {
+//          let count = 0;
+//          for (let i = 0; i < formatted.length; i++) {
+//            if (/\d/.test(formatted[i])) count++;
+//            if (count === digitsBeforeCursor) {
+//              // cursor logo após esse dígito
+//              newPos = i + 1;
+//              break;
+//            }
+//          }
+//          // se o usuário estava no final (p. ex. digitsBeforeCursor == total digits), ajustar pro fim
+//          if (count < digitsBeforeCursor) {
+//            newPos = formatted.length;
+//          }
+//        }
+//
+//        // garante que newPos esteja dentro do intervalo
+//        newPos = Math.max(0, Math.min(newPos, formatted.length));
+//        this.setSelectionRange(newPos, newPos);
+//      });
+//
+//      // opcional: prevenir caracteres não-numéricos no keypress
+//      input.addEventListener('keydown', function(e){
+//        // permite backspace, delete, setas, tab, ctrl/cmd combos etc.
+//        const allowedKeys = ['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'];
+//        if (allowedKeys.includes(e.key) || e.ctrlKey || e.metaKey) return;
+//        // bloqueia letras
+//        if (!/[0-9]/.test(e.key)) e.preventDefault();
+//      });
+//      }
+//
+//    })();
+//
 
-      if (input){
-      input.addEventListener('input', function (e) {
-        const raw = this.value;
-        // posição do cursor antes da formatação
-        const cursorPos = this.selectionStart;
+    const campoBusca = document.getElementById('buscarInsumos');
 
-        // quantos dígitos existiam antes do cursor
-        const digitsBeforeCursor = raw.slice(0, cursorPos).replace(/\D/g, '').length;
 
-        // pega só dígitos e limita a 11
-        let digits = raw.replace(/\D/g, '').slice(0, 11);
+campoBusca.addEventListener('keyup', function() {
+  const termoBusca = campoBusca.value.toLowerCase().trim(); // texto digitado
 
-        // formata
-        const formatted = formatarTelefone(digits);
-        console.log(formatted)
+  const itens = document.querySelectorAll('[data-titulo]');
 
-        // escreve no campo
-        this.value = formatted;
+  itens.forEach(item => {
+    const titulo = item.getAttribute('data-titulo').toLowerCase();
 
-        // calcula nova posição do cursor: acha a posição do N-ésimo dígito na string formatada
-        let newPos = 0;
-        if (digitsBeforeCursor === 0) {
-          newPos = 0;
-        } else {
-          let count = 0;
-          for (let i = 0; i < formatted.length; i++) {
-            if (/\d/.test(formatted[i])) count++;
-            if (count === digitsBeforeCursor) {
-              // cursor logo após esse dígito
-              newPos = i + 1;
-              break;
-            }
-          }
-          // se o usuário estava no final (p. ex. digitsBeforeCursor == total digits), ajustar pro fim
-          if (count < digitsBeforeCursor) {
-            newPos = formatted.length;
-          }
-        }
-
-        // garante que newPos esteja dentro do intervalo
-        newPos = Math.max(0, Math.min(newPos, formatted.length));
-        this.setSelectionRange(newPos, newPos);
-      });
-      }
-      // opcional: prevenir caracteres não-numéricos no keypress
-      input.addEventListener('keydown', function(e){
-        // permite backspace, delete, setas, tab, ctrl/cmd combos etc.
-        const allowedKeys = ['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'];
-        if (allowedKeys.includes(e.key) || e.ctrlKey || e.metaKey) return;
-        // bloqueia letras
-        if (!/[0-9]/.test(e.key)) e.preventDefault();
-      });
-    })();
+    // Se o campo estiver vazio, mostra tudo
+    // Senão, mostra apenas se contiver o termo digitado
+    if (termoBusca === '' || titulo.includes(termoBusca)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
 
 
 });
@@ -126,66 +149,25 @@ window.document.addEventListener("DOMContentLoaded", function () {
 // Check caixa no selecionar
 
 
-function formatarTelefone(digitos) {
-        // digitos: só números, já limitado a 11
-        console.log(digitos)
-        if (digitos.length === 0) return '';
-        if (digitos.length <= 2) return '(' + digitos;
-
-        const ddd = digitos.slice(0,2);
-        const local = digitos.slice(2); // parte após DDD
-        let resultado = '(' + ddd + ') ';
-
-        if (local.length <= 4) {
-          resultado += local;
-        } else if (local.length <= 8) {
-          // número fixo com 8 dígitos (ou local com até 8 dígitos)
-          resultado += local.slice(0,4) + (local.length > 4 ? '-' + local.slice(4) : '');
-        } else {
-          // celular com 9 dígitos locais (total 11)
-          resultado += local.slice(0,5) + '-' + local.slice(5);
-        }
-
-        return resultado;
-      }
-document.addEventListener("DOMContentLoaded", function() {
-    const bloco = document.getElementById("insumos-bloco");
-    const btnAdicionar = document.getElementById("adicionar-insumo");
-    const opcoesInsumo = document.getElementById("opcoes-insumo");
-
-    btnAdicionar.addEventListener("click", function() {
-        const div = document.createElement("div");
-        div.style.marginBottom = "8px";
-        div.className = "bloco-insumo";
-
-        // Cria o select e clona as opções
-        const select = opcoesInsumo.cloneNode(true);
-        select.removeAttribute('id');
-        select.setAttribute('name', 'insumo_id[]');
-        select.style.display = "inline";
-
-        // Cria campo quantidade
-        const inputQtd = document.createElement("input");
-        inputQtd.type = "number";
-        inputQtd.name = "quantidade[]";
-        inputQtd.step = "0.01";
-        inputQtd.min = "0";
-        inputQtd.required = true;
-        inputQtd.placeholder = "Quantidade";
-        inputQtd.style.marginLeft = "8px";
-
-        // Botão remover insumo
-        const btnRemover = document.createElement("button");
-        btnRemover.type = "button";
-        btnRemover.textContent = "Remover";
-        btnRemover.style.marginLeft = "8px";
-        btnRemover.onclick = function() {
-            bloco.removeChild(div);
-        };
-
-        div.appendChild(select);
-        div.appendChild(inputQtd);
-        div.appendChild(btnRemover);
-        bloco.appendChild(div);
-    });
-});
+//function formatarTelefone(digitos) {
+//        // digitos: só números, já limitado a 11
+//        console.log(digitos)
+//        if (digitos.length === 0) return '';
+//        if (digitos.length <= 2) return '(' + digitos;
+//
+//        const ddd = digitos.slice(0,2);
+//        const local = digitos.slice(2); // parte após DDD
+//        let resultado = '(' + ddd + ') ';
+//
+//        if (local.length <= 4) {
+//          resultado += local;
+//        } else if (local.length <= 8) {
+//          // número fixo com 8 dígitos (ou local com até 8 dígitos)
+//          resultado += local.slice(0,4) + (local.length > 4 ? '-' + local.slice(4) : '');
+//        } else {
+//          // celular com 9 dígitos locais (total 11)
+//          resultado += local.slice(0,5) + '-' + local.slice(5);
+//        }
+//
+//        return resultado;
+//      }

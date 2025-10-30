@@ -44,6 +44,13 @@
     </header>
 
     <main class="d-flex">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
         <aside class="fundobarra">
             <h4>Funcionalidades</h4>
             <nav class="navegar d-flex">
@@ -75,6 +82,12 @@
             </div>
 
             <h3>Produtos</h3>
+             <div class="tabela-insumos-cabecalho d-flex">
+                    <p><strong>Nome</strong></p>
+                    <p><strong>Preço</strong></p>
+                    <p><strong>Margem de lucro desejada</strong></p>
+                    <p><strong>Ações</strong></p>
+                </div>
             {% for produto in produtos %}
             <article class="produto d-flex">
                 <div class="info d-flex">
