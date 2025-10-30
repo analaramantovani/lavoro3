@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-database = r'C:\Users\Aluno\Desktop\Ana Lara\lavoro3\BANCO.FDB'
+database = r'C:\Users\Aluno\Desktop\Lavoro\lavoro3\BANCO.FDB'
 user = 'SYSDBA'
 password = 'sysdba'
 
