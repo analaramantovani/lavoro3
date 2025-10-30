@@ -67,7 +67,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
       const input = document.getElementById('telefone');
 
       if (input){
-      input.addEventListener('input', function (e) {
+        input.addEventListener('input', function (e) {
         const raw = this.value;
         // posição do cursor antes da formatação
         const cursorPos = this.selectionStart;
