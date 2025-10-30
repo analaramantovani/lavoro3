@@ -6,11 +6,15 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 database = r'C:\Users\Aluno\Desktop\Ana Lara\lavoro3\BANCO.FDB'
 =======
 database = r'C:\Users\Aluno\Desktop\MariaEduarda\lavoro3\BANCO.FDB'
 >>>>>>> af3c3507f86ebdde1887d5e54f2bd3ef6e6d17e1
+=======
+database = r'C:\Users\Aluno\Desktop\Lavoro\lavoro3\BANCO.FDB'
+>>>>>>> Stashed changes
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -52,7 +56,7 @@ def cadastro():
                 e_igual = True
 
 
-        # verificação de segurança de senha
+
         if not (t_especial == True and t_maiscula == True and t_minuscula == True and t_numero == True):
             flash('Senha precisa ter 8+, letra maiúscula, minúscula, número e caractere especial.', 'error')
             return render_template('html/cadastro.html')
@@ -210,12 +214,18 @@ def editarperfil(id):
 @app.route('/insumos')
 def insumos():
     if 'id_pessoa' not in session:
-        flash('Você precisa estar logado para acessar seu perfil')
+        flash('Você precisa estar logado para acessar seu perfil', 'error')
         return redirect(url_for('login'))
+
+    id_pessoa = session['id_pessoa']  # ID do usuário logado
 
     cursor = con.cursor()
     try:
-        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE FROM INSUMOS")
+        cursor.execute("""
+            SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE
+            FROM INSUMOS
+            WHERE ID_PESSOA = ?
+        """, (id_pessoa,))
         insumos = cursor.fetchall()
         return render_template('html/insumos.html', insumos=insumos)
     finally:
@@ -255,10 +265,10 @@ def cadastroInsumo():
         return redirect(url_for('login'))
     if request.method == 'POST':
         nomeinsumo = request.form['nomeinsumo']
-        unidademedida = request.form.get('unidademedida')
+        unidademedida = request.form['unidademedida']
         custounitario = request.form['custounitario']
         estoque = request.form['estoque']
-
+        id_pessoa = session.get("id_pessoa")
 
 
         cursor = con.cursor()
@@ -270,8 +280,8 @@ def cadastroInsumo():
             if cursor.fetchone():  # se existir ja o insumo
                 flash("Insumo já cadastrado", 'error')
                 return render_template('html/cadastroInsumo.html')
-            cursor.execute('INSERT INTO INSUMOS ( NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE) VALUES (?,?,?,?)',
-                           (nomeinsumo, unidademedida, custounitario, estoque, ))
+            cursor.execute('INSERT INTO INSUMOS ( NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA) VALUES (?,?,?,?,?)',
+                           (nomeinsumo, unidademedida, custounitario, estoque, id_pessoa))
             con.commit()
 
             flash('Insumo cadastrado com sucesso!', 'success')
@@ -290,7 +300,7 @@ def editarInsumo(id):
 
     cursor = con.cursor()
     try:
-        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
+        cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         insumo = cursor.fetchone()
 
 
@@ -305,7 +315,7 @@ def editarInsumo(id):
             estoque = request.form['estoque']
 
             cursor.execute(
-                "SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE FROM INSUMOS WHERE nome = ? and id_insumo <> ?",
+                "SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE nome = ? and id_insumo <> ?",
                 (nomeinsumo,id))
             nome = cursor.fetchone()
 
@@ -329,7 +339,7 @@ def editarInsumo(id):
                 WHERE ID_INSUMO = ?
             """, (nomeinsumo, unidademedida, custounitario, estoque, id))
 
-            # Commit changes once
+        
             con.commit()
 
             flash('Insumo editado com sucesso.')
