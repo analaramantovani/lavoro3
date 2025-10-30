@@ -964,26 +964,38 @@ input {
     margin-left: 0.1em;
 }
 
-.BotaoVerdeProduto{
+.BotaoVerdeProduto {
     background: var(--VerdeEscuro--);
     padding: var(--TamanhoBotao--);
     color: var(--Branco--);
     border: none;
     border-radius: var(--BordaPoucoRedonda--);
     font-size: large;
-    margin-left: 7.5em;
-    margin-top: 4em;
+    display: block;
+    margin: 4em auto 1em auto; /* centraliza e dá espaço abaixo */
 }
 
-.BotaoVermelhoProduto{
+.BotaoVermelhoProduto {
     background: var(--VermelhoPastel--);
     padding: var(--TamanhoBotao--);
     color: var(--Branco--);
     border: none;
     border-radius: var(--BordaPoucoRedonda--);
     font-size: large;
-    margin-left: 7.5em;
+    display: block;
+    margin: 1em auto; /* centraliza e fica embaixo do verde */
 }
+
+textarea{
+    width: 34em;
+  height: 5em;
+  resize: none;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
 /* editar insumo e produto Marcela */
 
 .edicao {
