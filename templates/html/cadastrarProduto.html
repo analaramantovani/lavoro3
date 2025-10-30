@@ -67,7 +67,7 @@
 
                     <h3>Insumos necessários</h3>
                     <div id="insumos-bloco"></div>
-                    <button type="button" id="adicionar-insumo" class="BotaoMarrom">Adicionar insumo</button>
+                    <button type="button" id="adicionar-insumo" class="BotaoMarromProduto">Adicionar insumo</button>
                     <!-- Select oculto para JS clonar as opções -->
                     <select id="opcoes-insumo" style="display:none;">
                         {% for insumo in insumos %}
@@ -76,8 +76,9 @@
                     </select>
 
                     <div class="botoes d-flex" style="margin-top: 1rem;">
-                        <a href="{{ url_for('produto') }}" class="BotaoVermelho">Cancelar</a>
-                        <button type="submit" class="BotaoVerde">Cadastrar Produto</button>
+
+                        <button type="submit" class="BotaoVerdeProduto">Cadastrar Produto</button>
+                         <button type="submit" class="BotaoVermelhoProduto"><a href="{{ url_for('produto') }}" >Cancelar</a></button>
                     </div>
                 </form>
             </div>

@@ -353,8 +353,8 @@ def excluirInsumo(id):
         cursor.execute("DELETE FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         con.commit()
         flash('Insumo excluído com sucesso.', 'success')
-    except Exception as e:
-        flash(f'Erro ao excluir insumo:', 'error')
+    except:
+        flash(f'Erro ao excluir insumo', 'error')
     finally:
         cursor.close()
 
@@ -403,6 +403,11 @@ def cadastrarProduto():
         cursor.close()
 
         flash('Produto cadastrado com sucesso!', 'success')
+
+        
+
+
+
         return redirect(url_for('produto'))
 
     # GET – mostra o formulário com os insumos cadastrados
@@ -464,7 +469,7 @@ def excluirProduto(id):
         cursor.execute("DELETE FROM PRODUTOS WHERE ID_PRODUTO = ? AND ID_PESSOA = ?", (id, session['id_pessoa']))
         con.commit()
         flash('Produto excluído com sucesso.', 'success')
-    except Exception as e:
+    except:
         flash('Erro ao excluir produto.', 'error')
     finally:
         cursor.close()
