@@ -281,7 +281,6 @@ header {
     display: flex; /* Usa flexbox para organizar os elementos horizontalmente */
     justify-content: space-between; /* Espaça os elementos igualmente com ESPAÇO ENTRE ELES */
     align-items: center; /* Alinha os itens verticalmente no centro */
-    padding: 0.5rem 0.5rem; /* Adiciona preenchimento interno ao topo e laterais */
     background-color: var(--BegeClaro--); /* Define a cor de fundo do cabeçalho */
     font-family: "Merriweather", serif; /* Define a fonte usada no cabeçalho */
 }
