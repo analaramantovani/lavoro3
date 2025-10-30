@@ -267,7 +267,7 @@ def cadastroInsumo():
         try:
             # verificar se o nome de insumo ja existe, se ja existir mensagem
             # senao vai dar insert
-            cursor.execute("SELECT ID_INSUMO FROM INSUMOS WHERE NOME = ?", (nomeinsumo,))
+            cursor.execute("SELECT ID_INSUMO FROM INSUMOS WHERE NOME = ? and ID_PESSOA = ?", (nomeinsumo,id_pessoaED))
 
             if cursor.fetchone():  # se existir ja o insumo
                 flash("Insumo já cadastrado", 'error')
@@ -291,6 +291,7 @@ def editarInsumo(id):
         return redirect(url_for('login'))
 
     cursor = con.cursor()
+
     try:
         cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         insumo = cursor.fetchone()
@@ -404,7 +405,7 @@ def cadastrarProduto():
 
         flash('Produto cadastrado com sucesso!', 'success')
 
-        
+
 
 
 
