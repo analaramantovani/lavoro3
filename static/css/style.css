@@ -948,53 +948,6 @@ input {
     justify-content: space-between; /* Espaça os itens igualmente entre as extremidades */
 }
 
-.BotaoMarromProduto{
-    background: var(--BegeEscuro--);
-    padding: var(--TamanhoBotaoAd--);
-    color: var(--Branco--);
-    border: none;
-    border-radius: var(--BordaPoucoRedonda--);
-    margin-left: 3em;
-    font-size: large;
-    font-size: 15.6px; 
-    padding: 10px 10px; 
-    border-radius: 5px;
-    margin-top: 1.5em;
-    margin-left: 0.1em;
-}
-
-.BotaoVerdeProduto {
-    background: var(--VerdeEscuro--);
-    padding: var(--TamanhoBotao--);
-    color: var(--Branco--);
-    border: none;
-    border-radius: var(--BordaPoucoRedonda--);
-    font-size: large;
-    display: block;
-    margin: 4em auto 1em auto; /* centraliza e dá espaço abaixo */
-}
-
-.BotaoVermelhoProduto {
-    background: var(--VermelhoPastel--);
-    padding: var(--TamanhoBotao--);
-    color: var(--Branco--);
-    border: none;
-    border-radius: var(--BordaPoucoRedonda--);
-    font-size: large;
-    display: block;
-    margin: 1em auto; /* centraliza e fica embaixo do verde */
-}
-
-textarea{
-    width: 34em;
-  height: 5em;
-  resize: none;
-  overflow-y: auto;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 14px;
-}
-
 /* editar insumo e produto Marcela */
 
 .edicao {
@@ -1559,4 +1512,51 @@ button.exclusao:hover,
     border: none;
     border-radius: var(--BordaPoucoRedonda--);
     font-size: large;
+}
+
+.BotaoMarromProduto{
+    background: var(--BegeEscuro--);
+    padding: var(--TamanhoBotaoAd--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    margin-left: 3em;
+    font-size: large;
+    font-size: 15.6px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-top: 1.5em;
+    margin-left: 0.1em;
+}
+
+.BotaoVerdeProduto {
+    background: var(--VerdeEscuro--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
+    display: block;
+    margin: 4em auto 1em auto; /* centraliza e dá espaço abaixo */
+}
+
+.BotaoVermelhoProduto {
+    background: var(--VermelhoPastel--);
+    padding: var(--TamanhoBotao--);
+    color: var(--Branco--);
+    border: none;
+    border-radius: var(--BordaPoucoRedonda--);
+    font-size: large;
+    display: block;
+    margin: 1em auto; /* centraliza e fica embaixo do verde */
+}
+
+textarea{
+    width: 34em;
+  height: 5em;
+  resize: none;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
 }

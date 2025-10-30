@@ -6,15 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'OI'
 
 host = 'localhost'
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 database = r'C:\Users\Aluno\Desktop\Ana Lara\lavoro3\BANCO.FDB'
-=======
-database = r'C:\Users\Aluno\Desktop\MariaEduarda\lavoro3\BANCO.FDB'
->>>>>>> af3c3507f86ebdde1887d5e54f2bd3ef6e6d17e1
-=======
-database = r'C:\Users\Aluno\Desktop\Lavoro\lavoro3\BANCO.FDB'
->>>>>>> Stashed changes
 user = 'SYSDBA'
 password = 'sysdba'
 
@@ -275,7 +267,10 @@ def cadastroInsumo():
         try:
             # verificar se o nome de insumo ja existe, se ja existir mensagem
             # senao vai dar insert
-            cursor.execute("SELECT ID_INSUMO FROM INSUMOS WHERE NOME = ?", (nomeinsumo,))
+            cursor.execute(
+                "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ?",
+                (nomeinsumo, id_pessoa)
+            )
 
             if cursor.fetchone():  # se existir ja o insumo
                 flash("Insumo já cadastrado", 'error')
@@ -299,6 +294,7 @@ def editarInsumo(id):
         return redirect(url_for('login'))
 
     cursor = con.cursor()
+
     try:
         cursor.execute("SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         insumo = cursor.fetchone()
@@ -309,14 +305,19 @@ def editarInsumo(id):
             return redirect(url_for('insumos'))
 
         if request.method == 'POST':
-            nomeinsumo = request.form['nomeinsumo']
+            nomeinsumo = request.form['nomeinsumo'].strip() #remove espaços extras no começo e no final do que o usuario digitou
             unidademedida = request.form['unidademedida']
             custounitario = float(request.form['custounitario'])
             estoque = request.form['estoque']
+            id_pessoa = session.get("id_pessoa")
 
             cursor.execute(
-                "SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE nome = ? and id_insumo <> ?",
-                (nomeinsumo,id))
+                "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ? AND ID_INSUMO != ?",
+                (nomeinsumo, id_pessoa, id)
+            ) #comparação de texto entre o que está na tabela (NOME) e o que ta passando,
+            # LOWER(NOME): transforma o nome do insumo, que ta na tabela, em minusculas
+            #LOWER(?): O ? é um marcador para um valor que será passado
+
             nome = cursor.fetchone()
 
             if nome:  # se existir ja o insumo
@@ -324,22 +325,22 @@ def editarInsumo(id):
                 return render_template('html/editarInsumo.html', insumo=insumo)
 
 
+
             if not insumo[3] == custounitario:
 
-                # Insert historical cost record
+              
                 cursor.execute("""
                     INSERT INTO HISTORICO_CUSTO (ID_INSUMO, PRECO, DATA_CRIACAO)
                     VALUES (?, ?, CURRENT_TIMESTAMP)
                 """, (id, insumo[3]))
 
-            # Update the INSUMOS table
+
             cursor.execute("""
                 UPDATE INSUMOS
                 SET NOME = ?, UNIDADE_MEDIDA = ?, CUSTO_UNITARIO = ?, ESTOQUE = ?
                 WHERE ID_INSUMO = ?
             """, (nomeinsumo, unidademedida, custounitario, estoque, id))
 
-        
             con.commit()
 
             flash('Insumo editado com sucesso.')
@@ -361,8 +362,8 @@ def excluirInsumo(id):
         cursor.execute("DELETE FROM INSUMOS WHERE ID_INSUMO = ?", (id,))
         con.commit()
         flash('Insumo excluído com sucesso.', 'success')
-    except Exception as e:
-        flash(f'Erro ao excluir insumo:', 'error')
+    except:
+        flash(f'Erro ao excluir insumo', 'error')
     finally:
         cursor.close()
 
@@ -472,7 +473,7 @@ def excluirProduto(id):
         cursor.execute("DELETE FROM PRODUTOS WHERE ID_PRODUTO = ? AND ID_PESSOA = ?", (id, session['id_pessoa']))
         con.commit()
         flash('Produto excluído com sucesso.', 'success')
-    except Exception as e:
+    except:
         flash('Erro ao excluir produto.', 'error')
     finally:
         cursor.close()
