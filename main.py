@@ -256,7 +256,7 @@ def cadastroInsumo():
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
     if request.method == 'POST':
-        nomeinsumo = request.form['nomeinsumo']
+        nomeinsumo = request.form['nomeinsumo'].strip()
         unidademedida = request.form['unidademedida']
         custounitario = request.form['custounitario']
         estoque = request.form['estoque']
@@ -267,7 +267,10 @@ def cadastroInsumo():
         try:
             # verificar se o nome de insumo ja existe, se ja existir mensagem
             # senao vai dar insert
-            cursor.execute("SELECT ID_INSUMO FROM INSUMOS WHERE NOME = ? and ID_PESSOA = ?", (nomeinsumo,id_pessoaED))
+            cursor.execute(
+                "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ?",
+                (nomeinsumo, id_pessoa)
+            )
 
             if cursor.fetchone():  # se existir ja o insumo
                 flash("Insumo já cadastrado", 'error')
@@ -302,19 +305,22 @@ def editarInsumo(id):
             return redirect(url_for('insumos'))
 
         if request.method == 'POST':
-            nomeinsumo = request.form['nomeinsumo']
+            nomeinsumo = request.form['nomeinsumo'].strip()
             unidademedida = request.form['unidademedida']
             custounitario = float(request.form['custounitario'])
             estoque = request.form['estoque']
+            id_pessoa = session.get("id_pessoa")
 
             cursor.execute(
-                "SELECT ID_INSUMO, NOME, UNIDADE_MEDIDA, CUSTO_UNITARIO, ESTOQUE, ID_PESSOA FROM INSUMOS WHERE nome = ? and id_insumo <> ?",
-                (nomeinsumo,id))
+                "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ? AND ID_INSUMO != ?",
+                (nomeinsumo, id_pessoa, id)
+            )
             nome = cursor.fetchone()
 
             if nome:  # se existir ja o insumo
                 flash("Insumo já cadastrado", 'error')
                 return render_template('html/editarInsumo.html', insumo=insumo)
+
 
 
             if not insumo[3] == custounitario:
@@ -404,11 +410,6 @@ def cadastrarProduto():
         cursor.close()
 
         flash('Produto cadastrado com sucesso!', 'success')
-
-
-
-
-
         return redirect(url_for('produto'))
 
     # GET – mostra o formulário com os insumos cadastrados
