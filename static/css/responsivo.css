@@ -893,11 +893,20 @@
 
         
         /* Cadastro do insumo */
-        .cardastro{
+        .cadastro-geral .cardastro{
             width: 14.5em;
             height: 27em;
+            margin-left: 0.9em;
         }
+
         
+        .botoes .BotaoVermelho{
+            margin-left: -1.5em;
+        }
+        .botoes .BotaoVerde{
+            margin-top: 2em;
+            margin-left: 2.5em;
+        }
 
         /* Tabela */
         .card {
@@ -949,5 +958,13 @@
             font-size: 1.5em;
             margin-top: 2em;
         }
-        /* cadastro De insumo */
+        /* cadastro De produto*/
+        textarea{
+            width: 16em;
+        }
+        .cadastro-geral .cardastro{
+            width: 14.5em;
+            height: 45em;
+            margin-left: 0.9em;
+        }
     }
