@@ -305,7 +305,7 @@ def editarInsumo(id):
             return redirect(url_for('insumos'))
 
         if request.method == 'POST':
-            nomeinsumo = request.form['nomeinsumo'].strip()
+            nomeinsumo = request.form['nomeinsumo'].strip() #remove espaços extras no começo e no final do que o usuario digitou
             unidademedida = request.form['unidademedida']
             custounitario = float(request.form['custounitario'])
             estoque = request.form['estoque']
@@ -314,7 +314,9 @@ def editarInsumo(id):
             cursor.execute(
                 "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ? AND ID_INSUMO != ?",
                 (nomeinsumo, id_pessoa, id)
-            )
+            ) #comparação de texto entre o que está na tabela (NOME) e o que ta passando,
+            # LOWER(NOME): transforma o nome do insumo, que ta na tabela, em minusculas
+            #LOWER(?): O ? é um marcador para um valor que será passado
             nome = cursor.fetchone()
 
             if nome:  # se existir ja o insumo
@@ -325,20 +327,20 @@ def editarInsumo(id):
 
             if not insumo[3] == custounitario:
 
-                # Insert historical cost record
+              
                 cursor.execute("""
                     INSERT INTO HISTORICO_CUSTO (ID_INSUMO, PRECO, DATA_CRIACAO)
                     VALUES (?, ?, CURRENT_TIMESTAMP)
                 """, (id, insumo[3]))
 
-            # Update the INSUMOS table
+
             cursor.execute("""
                 UPDATE INSUMOS
                 SET NOME = ?, UNIDADE_MEDIDA = ?, CUSTO_UNITARIO = ?, ESTOQUE = ?
                 WHERE ID_INSUMO = ?
             """, (nomeinsumo, unidademedida, custounitario, estoque, id))
 
-            # Commit changes once
+
             con.commit()
 
             flash('Insumo editado com sucesso.')
