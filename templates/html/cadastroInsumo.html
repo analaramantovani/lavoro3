@@ -81,11 +81,10 @@
                     <input type="number" id="estoque" name="estoque"  min="1"  required>
 
                     <div class="botoes">
+                         <!-- O botão "Cadastrar" é apenas de submit agora -->
+                        <a href="{{url_for('insumos')}}"><button type="submit" class="botaodecadastroinsumo">Cadastrar</button></a>
                         <!-- O botão "Cancelar" agora é um link que redireciona para a página de insumos -->
                         <a href="{{ url_for('insumos') }}" class="BotaoVermelho">Cancelar</a>
-
-                        <!-- O botão "Cadastrar" é apenas de submit agora -->
-                        <a href="{{url_for('insumos')}}"><button type="submit" class="botaodecadastroinsumo">Cadastrar</button></a>
                     </div>
                 </form>
             </div>

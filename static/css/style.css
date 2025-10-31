@@ -793,6 +793,7 @@ footer {
     margin-bottom: 4em; /* Margem inferior */
 }
 
+
 input .email-login{
     background-color: #FFFFFF;
 }
@@ -1160,7 +1161,7 @@ form input {
 }
 .botoes{
     display: inline;
-    margin-left: 5em;
+    margin-left: 7em;
 }
 
 .botoes .BotaoVerde{
@@ -1168,7 +1169,11 @@ form input {
     width: 8em;
 }
 
-
+select{
+    border-radius: 20px;
+    witdh: 30em;
+    height: 2em;
+}
 
 /* Cadastrar produtos  */
 

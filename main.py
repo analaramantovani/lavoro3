@@ -61,6 +61,8 @@ def cadastro():
 
         try:
             cursor.execute('Select 1 from USUARIOS u where u.EMAIL = ?', (email,))
+            #select 1 retorna se é verdadeiro ou não, entao, retorna 1, nesse caso, porem, pode retornar 2, caso seja 2
+            #se nao for verdadeiro, nao retorna nada
             if cursor.fetchone(): #se existir algum usuario com o email cadastrado
                 flash("Erro: Email já cadastrado", 'error')
                 return render_template('html/cadastro.html')
@@ -256,7 +258,10 @@ def cadastroInsumo():
         flash('Você precisa estar logado para acessar seu perfil')
         return redirect(url_for('login'))
     if request.method == 'POST':
+
         nomeinsumo = request.form['nomeinsumo']
+
+        nomeinsumo = request.form['nomeinsumo'].strip() #remove espaços extras no começo e no final do que o usuario
         unidademedida = request.form['unidademedida']
         custounitario = request.form['custounitario']
         estoque = request.form['estoque']
@@ -269,6 +274,9 @@ def cadastroInsumo():
             # senao vai dar insert
             cursor.execute(
                 "SELECT ID_INSUMO FROM INSUMOS WHERE LOWER(NOME) = LOWER(?) AND ID_PESSOA = ?",
+                # comparação de texto entre o que está na tabela (NOME) e o que ta passando,
+                # LOWER(NOME): transforma o nome do insumo, que ta na tabela, em minusculas
+                # LOWER(?): O ? é um marcador para um valor que será passado
                 (nomeinsumo, id_pessoa)
             )
 
